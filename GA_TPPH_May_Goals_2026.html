@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Georgia — May 2026 TPPH Goals</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#5c1a1a;
+  --navy2:#8b2e2e;
+  --gold:#e8c97a;
+  --gold2:#c9a227;
+  --white:#ffffff;
+  --offwhite:#f8f7f4;
+  --border:#d3d1c7;
+  --muted:#888780;
+  --green:#1a7a4a;
+  --green-bg:#d6f0e0;
+  --amber:#b87a00;
+  --amber-bg:#fef0c8;
+  --red:#c0392b;
+  --red-bg:#ffd6d8;
+  --text:#2c2c2a;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'DM Sans',sans-serif;background:var(--offwhite);color:var(--text);min-height:100vh;}
+
+/* Header */
+.header{background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 100%);padding:28px 32px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 4px 20px rgba(92,26,26,0.4);}
+.header-left h1{font-family:'DM Serif Display',serif;font-size:26px;color:var(--white);margin-bottom:4px;}
+.header-left p{font-size:13px;color:#e8c8b0;letter-spacing:.04em;}
+.header-right{text-align:right;}
+.header-badge{background:linear-gradient(135deg,var(--gold) 0%,var(--gold2) 100%);color:var(--navy);font-weight:700;font-size:12px;padding:6px 14px;border-radius:20px;letter-spacing:.06em;text-transform:uppercase;}
+
+/* Page */
+.page{max-width:1100px;margin:0 auto;padding:28px 24px 60px;}
+
+/* Summary cards */
+.summary-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:28px;}
+.s-card{background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 100%);border:1px solid #8b2e2e;border-radius:12px;padding:16px 18px;box-shadow:0 4px 15px rgba(92,26,26,0.25);}
+.s-lbl{font-size:11px;color:var(--gold);text-transform:uppercase;letter-spacing:.08em;font-weight:600;margin-bottom:6px;}
+.s-val{font-size:24px;font-weight:700;color:var(--white);font-family:'DM Mono',monospace;}
+.s-sub{font-size:11px;color:#e8c8b0;margin-top:4px;}
+
+/* Section title */
+.sec-title{font-family:'DM Serif Display',serif;font-size:18px;color:var(--navy);margin-bottom:16px;padding-bottom:8px;border-bottom:2px solid var(--gold2);}
+
+/* Table */
+.card{background:#fff;border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:28px;}
+table{width:100%;border-collapse:collapse;font-size:13px;}
+thead tr{background:var(--navy);}
+thead th{padding:10px 14px;text-align:left;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.07em;color:var(--gold);white-space:nowrap;}
+thead th.r{text-align:right;}
+thead th.c{text-align:center;}
+tbody tr{border-top:1px solid var(--border);}
+tbody tr:hover{background:#f8f7f4;}
+tbody td{padding:10px 14px;font-size:13px;}
+tbody td.r{text-align:right;font-family:'DM Mono',monospace;}
+tbody td.c{text-align:center;}
+tfoot tr{background:var(--navy);border-top:2px solid var(--gold2);}
+tfoot td{padding:10px 14px;font-size:12px;font-weight:700;color:var(--gold);font-family:'DM Mono',monospace;}
+tfoot td.lbl{color:#e8c8b0;font-family:'DM Sans',sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:.06em;}
+
+/* Goal badge */
+.goal-badge{display:inline-flex;align-items:center;gap:5px;font-family:'DM Mono',monospace;font-size:13px;font-weight:700;}
+.goal-badge.top{color:var(--green);}
+.goal-badge.strong{color:#1a7a4a;}
+.goal-badge.avg{color:var(--amber);}
+.goal-badge.below{color:#c05a00;}
+.goal-badge.urgent{color:var(--red);}
+
+/* Improvement chip */
+.imp-chip{display:inline-block;padding:2px 8px;border-radius:10px;font-family:'DM Mono',monospace;font-size:11px;font-weight:600;}
+.imp-sm{background:#eaf7d6;color:#1a7a4a;}
+.imp-md{background:#fef0c8;color:#6b3a00;}
+.imp-lg{background:#ffd6d8;color:#7a0008;}
+
+/* Tier label */
+.tier{font-size:10px;padding:3px 8px;border-radius:10px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;}
+.tier-top{background:var(--green-bg);color:var(--green);}
+.tier-strong{background:#eaf7d6;color:#2d5a0a;}
+.tier-avg{background:#feffd6;color:#5a5a00;}
+.tier-below{background:var(--amber-bg);color:#6b3a00;}
+.tier-urgent{background:var(--red-bg);color:#7a0008;}
+
+/* Labor pct color */
+.labor-ok{color:var(--green);font-weight:600;}
+.labor-warn{color:var(--amber);font-weight:600;}
+.labor-bad{color:var(--red);font-weight:600;}
+
+/* Notes box */
+.notes-section{background:#fff;border:1px solid var(--border);border-left:4px solid var(--gold2);border-radius:0 12px 12px 0;padding:20px 24px;margin-bottom:28px;}
+.notes-section h3{font-family:'DM Serif Display',serif;font-size:16px;color:var(--navy);margin-bottom:12px;}
+.notes-section p{font-size:13px;line-height:1.8;color:#444;margin-bottom:8px;}
+.notes-section ul{margin-left:20px;}
+.notes-section li{font-size:13px;line-height:1.9;color:#444;}
+
+/* Priority locations */
+.priority-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:28px;}
+.priority-card{background:#fff;border:1px solid var(--border);border-radius:12px;padding:18px;}
+.priority-card h4{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--border);}
+.priority-card.red h4{color:var(--red);}
+.priority-card.green h4{color:var(--green);}
+.priority-item{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid #f0ede8;}
+.priority-item:last-child{border-bottom:none;}
+.pi-loc{font-family:'DM Mono',monospace;font-size:13px;font-weight:600;}
+.pi-detail{font-size:11px;color:var(--muted);margin-top:2px;}
+
+.may-goal-cell{
+  background:linear-gradient(135deg,#5c1a1a 0%,#8b2e2e 100%);
+  color:#e8c97a;
+  font-family:'DM Mono',monospace;
+  font-weight:700;
+  font-size:14px;
+  text-align:right;
+  padding:10px 14px;
+  border-left:2px solid #e8c97a;
+  border-right:2px solid #e8c97a;
+}
+thead th.may-goal-hdr{
+  background:#e8c97a;
+  color:#5c1a1a;
+  font-weight:700;
+  border-left:2px solid #c9a227;
+  border-right:2px solid #c9a227;
+}
+tfoot td.may-goal-foot{
+  background:#e8c97a;
+  color:#5c1a1a;
+  border-left:2px solid #c9a227;
+  border-right:2px solid #c9a227;
+}
+
+@media(max-width:768px){
+  .page{padding:12px 10px 40px;}
+  .summary-strip{grid-template-columns:repeat(2,1fr);gap:8px;}
+  .s-val{font-size:20px;}
+  .card{overflow-x:auto;}
+  .card table{min-width:900px;}
+  .priority-grid{grid-template-columns:1fr;}
+  body{overflow-x:hidden;}
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-left">
+    <h1>Georgia — May 2026 TPPH Goals</h1>
+    <p>Based on April 2026 Labor Analysis &nbsp;·&nbsp; 20 Locations</p>
+  </div>
+  <div class="header-right">
+    <div class="header-badge">May 2026 Planning</div>
+  </div>
+</div>
+
+<div class="page">
+
+  <!-- Summary Cards -->
+  <div class="summary-strip">
+    <div class="s-card">
+      <div class="s-lbl">April Avg TPPH</div>
+      <div class="s-val">5.85</div>
+      <div class="s-sub">Portfolio actual</div>
+    </div>
+    <div class="s-card">
+      <div class="s-lbl">May Portfolio Goal</div>
+      <div class="s-val">6.03</div>
+      <div class="s-sub">+0.18 improvement</div>
+    </div>
+    
+    <div class="s-card">
+      <div class="s-lbl">April OT Hours</div>
+      <div class="s-val">2,979</div>
+      <div class="s-sub">Key area to reduce</div>
+    </div>
+  </div>
+
+  <!-- Goals Table -->
+  <div class="sec-title">May TPPH Goals by Location</div>
+  <div class="card">
+    <table>
+      <thead>
+        <tr>
+          <th>Location</th>
+          <th class="r">Apr TPPH</th>
+          <th class="r">Labor %</th>
+          <th class="r">Avg Rate</th>
+          <th class="r">OT Hrs</th>
+          <th class="r">Act vs Need</th>
+          <th class="c">Tier</th>
+          <th class="r may-goal-hdr">May Goal</th>
+          <th class="c">Improvement</th>
+          <th>Focus</th>
+        </tr>
+      </thead>
+      <tbody id="goalBody"></tbody>
+      <tfoot>
+        <tr>
+          <td class="lbl">Portfolio Total / Average</td>
+          <td class="r">5.85</td>
+          <td class="r">20.6%</td>
+          <td class="r">$12.29</td>
+          <td class="r">2,979</td>
+          <td class="r">+2,382</td>
+          <td></td>
+          <td class="may-goal-foot r">6.03</td>
+          <td class="c"><span class="imp-chip imp-md">+0.22</span></td>
+          <td></td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+
+  <!-- Priority Focus -->
+  <div class="sec-title">Priority Locations for May</div>
+  <div class="priority-grid">
+    <div class="priority-card red">
+      <h4>🚨 Urgent Intervention Needed</h4>
+      <div class="priority-item">
+        <div><div class="pi-loc">31329 — 431 North</div><div class="pi-detail">TPPH 4.30 → Goal 4.70 · Labor 25.7% · 486 hrs over need</div></div>
+        <span class="imp-chip imp-lg">+0.40</span>
+      </div>
+      <div class="priority-item">
+        <div><div class="pi-loc">02435 — US 280 Bypass</div><div class="pi-detail">TPPH 4.84 → Goal 5.24 · Labor 23.5% · 543 hrs over need</div></div>
+        <span class="imp-chip imp-lg">+0.40</span>
+      </div>
+      <div class="priority-item">
+        <div><div class="pi-loc">19461 — East Main</div><div class="pi-detail">TPPH 4.98 → Goal 5.38 · Labor 21.4% · 425 hrs over need</div></div>
+        <span class="imp-chip imp-lg">+0.40</span>
+      </div>
+      <div class="priority-item">
+        <div><div class="pi-loc">02066 — Commerce</div><div class="pi-detail">TPPH 5.06 → Goal 5.46 · Labor 23.7% · 317 hrs over need</div></div>
+        <span class="imp-chip imp-lg">+0.40</span>
+      </div>
+      <div class="priority-item">
+        <div><div class="pi-loc">24344 — Ladonia</div><div class="pi-detail">TPPH 5.06 → Goal 5.46 · Labor 21.5% · 188 hrs over need</div></div>
+        <span class="imp-chip imp-lg">+0.40</span>
+      </div>
+    </div>
+    <div class="priority-card green">
+      <h4>⭐ Top Performers — Protect & Export</h4>
+      <div class="priority-item">
+        <div><div class="pi-loc">24343 — N. Veterans</div><div class="pi-detail">TPPH 6.95 → Goal 6.65 ▼ · 668 hrs understaffed — must add staff</div></div>
+        <span class="imp-chip imp-lg">-0.30</span>
+      </div>
+      <div class="priority-item">
+        <div><div class="pi-loc">03895 — Valley</div><div class="pi-detail">TPPH 6.78 → Goal 6.88 · Labor 17.3% · Lowest labor %</div></div>
+        <span class="imp-chip imp-sm">+0.10</span>
+      </div>
+      <div class="priority-item">
+        <div><div class="pi-loc">07562 — 4th Ave</div><div class="pi-detail">TPPH 6.56 → Goal 6.71 · Strong GC performance</div></div>
+        <span class="imp-chip imp-sm">+0.15</span>
+      </div>
+      <div class="priority-item">
+        <div><div class="pi-loc">35634 — Flat Rock</div><div class="pi-detail">TPPH 6.48 → Goal 6.63 · Labor 17.5% · Efficient</div></div>
+        <span class="imp-chip imp-sm">+0.15</span>
+      </div>
+      <div class="priority-item">
+        <div><div class="pi-loc">24343 method → share with bottom 5</div><div class="pi-detail">Schedule a peer conversation this week</div></div>
+        <span style="font-size:11px;color:var(--green);font-weight:600;">Action</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Notes -->
+  <div class="notes-section">
+    <h3>How These Goals Were Set</h3>
+    <p>May goals were derived from April actual performance using a tiered improvement framework — not arbitrary targets. Each goal reflects what is realistically achievable with focused scheduling discipline in a single month.</p>
+    <ul>
+      <li><strong>Top performers (TPPH ≥ 6.75):</strong> +0.10 — maintain excellence, small stretch to protect position</li>
+      <li><strong>Strong performers (6.25–6.74):</strong> +0.15 — push toward the top tier</li>
+      <li><strong>Near average (5.85–6.24):</strong> +0.20 to +0.25 — scheduling efficiency focus, especially where labor % exceeds 21%</li>
+      <li><strong>Below average (5.25–5.84):</strong> +0.30 to +0.35 — scheduling discipline required, reduce hours over need</li>
+      <li><strong>Significantly below average (&lt;5.25):</strong> +0.40 — priority intervention, high labor % and over-scheduling driving results</li>
+    </ul>
+    <p style="margin-top:12px;"><strong>Important note on understaffing:</strong> Locations running short on hours are not automatically performing well. 24343 N. Veterans leads the portfolio in TPPH at 6.95 but is 668 hours understaffed — <strong>their May goal is reduced to 6.65</strong>, below their April actual — a significant service risk that must be addressed in May. 33945 Lafayette is similarly understaffed at -183 hours — <strong>their goal is also reduced to 5.99</strong>, below April actual. Adding proper staffing will temporarily reduce TPPH before it rebounds. Short hours can mask crew gaps that hurt OEPE, guest experience, and ultimately sales.</p>
+    <p style="margin-top:8px;"><strong>Key lever for all locations:</strong> The portfolio ran 2,979 overtime hours in April. Every hour of OT reduced is a direct TPPH improvement. Locations with the highest OT (02066 at 252 hrs, 02435 at 222 hrs, 05031 at 184 hrs) should make OT reduction their primary May focus.</p>
+  </div>
+
+</div>
+
+<script>
+var goals = [
+  {loc:'455 - Macon Rd',     nsn:455,   apr:6.07, labor:19.9, rate:11.54, ot:106.3, actvneed:-32.4,  goal:6.27, imp:0.20, tier:'avg',    focus:'Solid TPPH — push toward top tier'},
+  {loc:'02066 - Commerce',   nsn:2066,  apr:5.06, labor:23.7, rate:12.50, ot:251.7, actvneed:317.4,  goal:5.46, imp:0.40, tier:'urgent', focus:'Significantly below avg + overscheduled · <strong>Reduce OT</strong>'},
+  {loc:'02435 - US 280',     nsn:2435,  apr:4.84, labor:23.5, rate:12.04, ot:221.9, actvneed:543.3,  goal:5.29, imp:0.45, tier:'urgent', focus:'543 hrs overscheduled — highest priority'},
+  {loc:'03895 - Valley',     nsn:3895,  apr:6.78, labor:17.3, rate:12.62, ot:198.8, actvneed:-71.0,  goal:6.88, imp:0.10, tier:'strong', focus:'Understaffed 71 hrs — small stretch, monitor service · <strong>Reduce OT</strong>'},
+  {loc:'05031 - Airport',    nsn:5031,  apr:5.41, labor:21.9, rate:11.81, ot:184.1, actvneed:381.7,  goal:5.81, imp:0.40, tier:'urgent', focus:'382 hrs overscheduled — urgent fix'},
+  {loc:'06080 - Victory Dr', nsn:6080,  apr:6.00, labor:18.2, rate:12.07, ot:197.6, actvneed:-71.2,  goal:6.10, imp:0.10, tier:'avg',    focus:'Understaffed 71 hrs — small stretch, monitor service · <strong>Reduce OT</strong>'},
+  {loc:'07562 - 4th Ave',    nsn:7562,  apr:6.56, labor:26.7, rate:15.87, ot:112.8, actvneed:62.7,   goal:6.66, imp:0.10, tier:'strong', focus:'Top performer, well staffed — 26.7% labor highest in portfolio'},
+  {loc:'10521 - Stadium',   nsn:10521, apr:5.53, labor:21.8, rate:11.78, ot:167.8, actvneed:37.0,   goal:5.78, imp:0.25, tier:'below',  focus:'Near avg + 21.8% labor — scheduling efficiency needed'},
+  {loc:'11362 - Milgen Rd', nsn:11362, apr:5.97, labor:21.1, rate:12.02, ot:44.4,  actvneed:236.4,  goal:6.27, imp:0.30, tier:'below',  focus:'236 hrs over — scheduling discipline required'},
+  {loc:'11743 - Whitesville',nsn:11743, apr:5.91, labor:19.4, rate:12.47, ot:149.8, actvneed:-93.9,  goal:6.06, imp:0.15, tier:'avg',    focus:'Below avg + understaffed 94 hrs — balance scheduling'},
+  {loc:'11822 - Buena Vista',nsn:11822, apr:6.12, labor:19.5, rate:12.24, ot:155.5, actvneed:-91.6,  goal:6.22, imp:0.10, tier:'avg',    focus:'Understaffed 92 hrs — small stretch, monitor service'},
+  {loc:'11915 - Manchester', nsn:11915, apr:6.15, labor:20.9, rate:12.13, ot:87.2,  actvneed:78.0,   goal:6.35, imp:0.20, tier:'avg',    focus:'Solid TPPH — push toward top tier · <strong>Reduce OT</strong>'},
+  {loc:'15069 - Bradley Pk', nsn:15069, apr:5.94, labor:20.6, rate:11.60, ot:113.0, actvneed:424.2,  goal:6.24, imp:0.30, tier:'below',  focus:'424 hrs over — scheduling discipline required'},
+  {loc:'19461 - East Main',  nsn:19461, apr:4.98, labor:21.4, rate:12.30, ot:179.9, actvneed:424.7,  goal:5.43, imp:0.45, tier:'urgent', focus:'425 hrs over · Far below avg — highest priority'},
+  {loc:'24343 - N Veterans', nsn:24343, apr:6.95, labor:17.5, rate:12.29, ot:61.0,  actvneed:-668.3, goal:6.65, imp:-0.30,tier:'urgent', focus:'668 hrs understaffed — TPPH inflated, must add staff · Goal reduced'},
+  {loc:'24344 - Ladonia',    nsn:24344, apr:5.06, labor:21.5, rate:11.96, ot:177.1, actvneed:187.9,  goal:5.46, imp:0.40, tier:'urgent', focus:'Significantly below avg + overscheduled · <strong>Reduce OT</strong>'},
+  {loc:'25063 - Lees Xing',  nsn:25063, apr:6.02, labor:21.2, rate:12.67, ot:186.8, actvneed:248.5,  goal:6.32, imp:0.30, tier:'below',  focus:'248 hrs over — scheduling discipline · <strong>Reduce OT</strong>'},
+  {loc:'31329 - 431 North',  nsn:31329, apr:4.30, labor:25.7, rate:11.63, ot:111.2, actvneed:486.4,  goal:4.75, imp:0.45, tier:'urgent', focus:'Worst in portfolio · 486 hrs over · 25.7% labor'},
+  {loc:'33945 - Lafayette',  nsn:33945, apr:6.19, labor:19.8, rate:12.37, ot:74.6,  actvneed:-183.0, goal:5.99, imp:-0.20,tier:'urgent', focus:'183 hrs understaffed — hold TPPH while fixing staffing · Goal reduced'},
+  {loc:'35634 - Flat Rock',  nsn:35634, apr:6.48, labor:17.5, rate:11.64, ot:197.7, actvneed:165.0,  goal:6.68, imp:0.20, tier:'strong', focus:'Good TPPH but 165 hrs over · <strong>Reduce OT</strong> 198 hrs'},
+];
+
+var tierConfig = {
+  top:    {label:'Top',    cls:'tier-top',    goalCls:'top'},
+  strong: {label:'Strong', cls:'tier-strong', goalCls:'strong'},
+  avg:    {label:'Average',cls:'tier-avg',    goalCls:'avg'},
+  below:  {label:'Below',  cls:'tier-below',  goalCls:'below'},
+  urgent: {label:'Urgent', cls:'tier-urgent', goalCls:'urgent'},
+};
+
+var tbody = document.getElementById('goalBody');
+goals.forEach(function(g) {
+  var tc = tierConfig[g.tier];
+  var impCls = g.imp < 0 ? 'imp-lg' : g.imp <= 0.15 ? 'imp-sm' : g.imp <= 0.25 ? 'imp-md' : 'imp-lg';
+  var laborCls = g.labor < 20 ? 'labor-ok' : g.labor < 22 ? 'labor-warn' : 'labor-bad';
+  var avnColor = g.actvneed > 200 ? 'color:var(--red);font-weight:600;' : g.actvneed > 0 ? 'color:var(--amber);' : 'color:var(--green);';
+  var tr = document.createElement('tr');
+  tr.innerHTML =
+    '<td><span style="font-family:DM Mono,monospace;font-weight:600;font-size:13px;">' + g.loc + '</span></td>' +
+    '<td class="r">' + g.apr.toFixed(2) + '</td>' +
+    '<td class="r"><span class="' + laborCls + '">' + g.labor.toFixed(1) + '%</span></td>' +
+    '<td class="r">$' + g.rate.toFixed(2) + '</td>' +
+    '<td class="r">' + g.ot.toFixed(0) + '</td>' +
+    '<td class="r" style="' + avnColor + '">' + (g.actvneed > 0 ? '+' : '') + g.actvneed.toFixed(0) + '</td>' +
+    '<td class="c"><span class="tier ' + tc.cls + '">' + tc.label + '</span></td>' +
+    '<td class="may-goal-cell">' + g.goal.toFixed(2) + '</td>' +
+    '<td class="c"><span class="imp-chip ' + impCls + '">' + (g.imp >= 0 ? '+' : '') + g.imp.toFixed(2) + '</span></td>' +
+    '<td style="font-size:11px;color:var(--muted);">' + g.focus + '</td>';
+  tbody.appendChild(tr);
+});
+</script>
+</body>
+</html>

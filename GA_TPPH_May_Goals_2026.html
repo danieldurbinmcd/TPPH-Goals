@@ -6,333 +6,490 @@
 <title>Georgia — May 2026 TPPH Goals</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-:root{
-  --navy:#5c1a1a;
-  --navy2:#8b2e2e;
-  --gold:#e8c97a;
-  --gold2:#c9a227;
-  --white:#ffffff;
-  --offwhite:#f8f7f4;
-  --border:#d3d1c7;
-  --muted:#888780;
-  --green:#1a7a4a;
-  --green-bg:#d6f0e0;
-  --amber:#b87a00;
-  --amber-bg:#fef0c8;
-  --red:#c0392b;
-  --red-bg:#ffd6d8;
-  --text:#2c2c2a;
-}
 *{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:'DM Sans',sans-serif;background:var(--offwhite);color:var(--text);min-height:100vh;}
-
-/* Header */
-.header{background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 100%);padding:28px 32px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 4px 20px rgba(92,26,26,0.4);}
-.header-left h1{font-family:'DM Serif Display',serif;font-size:26px;color:var(--white);margin-bottom:4px;}
-.header-left p{font-size:13px;color:#e8c8b0;letter-spacing:.04em;}
-.header-right{text-align:right;}
-.header-badge{background:linear-gradient(135deg,var(--gold) 0%,var(--gold2) 100%);color:var(--navy);font-weight:700;font-size:12px;padding:6px 14px;border-radius:20px;letter-spacing:.06em;text-transform:uppercase;}
-
-/* Page */
+body{font-family:'DM Sans',sans-serif;background:#f8f7f4;color:#2c2c2a;}
+.header{background:linear-gradient(135deg,#5c1a1a,#8b2e2e);padding:26px 32px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 4px 20px rgba(92,26,26,0.4);}
+.header h1{font-family:'DM Serif Display',serif;font-size:24px;color:#fff;margin-bottom:4px;}
+.header p{font-size:12px;color:#e8c8b0;letter-spacing:.04em;}
+.badge{background:linear-gradient(135deg,#e8c97a,#c9a227);color:#5c1a1a;font-weight:700;font-size:11px;padding:6px 14px;border-radius:20px;letter-spacing:.06em;text-transform:uppercase;}
 .page{max-width:1100px;margin:0 auto;padding:28px 24px 60px;}
-
-/* Summary cards */
-.summary-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:28px;}
-.s-card{background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 100%);border:1px solid #8b2e2e;border-radius:12px;padding:16px 18px;box-shadow:0 4px 15px rgba(92,26,26,0.25);}
-.s-lbl{font-size:11px;color:var(--gold);text-transform:uppercase;letter-spacing:.08em;font-weight:600;margin-bottom:6px;}
-.s-val{font-size:24px;font-weight:700;color:var(--white);font-family:'DM Mono',monospace;}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:28px;}
+.card{background:linear-gradient(135deg,#5c1a1a,#8b2e2e);border:1px solid #8b2e2e;border-radius:12px;padding:16px 18px;box-shadow:0 4px 15px rgba(92,26,26,0.25);}
+.s-lbl{font-size:11px;color:#e8c97a;text-transform:uppercase;letter-spacing:.08em;font-weight:600;margin-bottom:6px;}
+.s-val{font-size:26px;font-weight:700;color:#fff;font-family:'DM Mono',monospace;line-height:1.2;}
 .s-sub{font-size:11px;color:#e8c8b0;margin-top:4px;}
-
-/* Section title */
-.sec-title{font-family:'DM Serif Display',serif;font-size:18px;color:var(--navy);margin-bottom:16px;padding-bottom:8px;border-bottom:2px solid var(--gold2);}
-
-/* Table */
-.card{background:#fff;border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:28px;}
-table{width:100%;border-collapse:collapse;font-size:13px;}
-thead tr{background:var(--navy);}
-thead th{padding:10px 14px;text-align:left;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.07em;color:var(--gold);white-space:nowrap;}
+.sec-title{font-family:'DM Serif Display',serif;font-size:18px;color:#5c1a1a;margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid #c9a227;}
+.tbl-wrap{background:#fff;border:1px solid #d3d1c7;border-radius:12px;overflow:hidden;margin-bottom:28px;}
+table{width:100%;border-collapse:collapse;font-size:12px;}
+thead tr{background:#5c1a1a;}
+thead th{padding:9px 12px;text-align:left;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.07em;color:#e8c97a;}
 thead th.r{text-align:right;}
 thead th.c{text-align:center;}
-tbody tr{border-top:1px solid var(--border);}
-tbody tr:hover{background:#f8f7f4;}
-tbody td{padding:10px 14px;font-size:13px;}
-tbody td.r{text-align:right;font-family:'DM Mono',monospace;}
-tbody td.c{text-align:center;}
-tfoot tr{background:var(--navy);border-top:2px solid var(--gold2);}
-tfoot td{padding:10px 14px;font-size:12px;font-weight:700;color:var(--gold);font-family:'DM Mono',monospace;}
-tfoot td.lbl{color:#e8c8b0;font-family:'DM Sans',sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:.06em;}
-
-/* Goal badge */
-.goal-badge{display:inline-flex;align-items:center;gap:5px;font-family:'DM Mono',monospace;font-size:13px;font-weight:700;}
-.goal-badge.top{color:var(--green);}
-.goal-badge.strong{color:#1a7a4a;}
-.goal-badge.avg{color:var(--amber);}
-.goal-badge.below{color:#c05a00;}
-.goal-badge.urgent{color:var(--red);}
-
-/* Improvement chip */
-.imp-chip{display:inline-block;padding:2px 8px;border-radius:10px;font-family:'DM Mono',monospace;font-size:11px;font-weight:600;}
-.imp-sm{background:#eaf7d6;color:#1a7a4a;}
-.imp-md{background:#fef0c8;color:#6b3a00;}
-.imp-lg{background:#ffd6d8;color:#7a0008;}
-
-/* Tier label */
-.tier{font-size:10px;padding:3px 8px;border-radius:10px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;}
-.tier-top{background:var(--green-bg);color:var(--green);}
-.tier-strong{background:#eaf7d6;color:#2d5a0a;}
-.tier-avg{background:#feffd6;color:#5a5a00;}
-.tier-below{background:var(--amber-bg);color:#6b3a00;}
-.tier-urgent{background:var(--red-bg);color:#7a0008;}
-
-/* Labor pct color */
-.labor-ok{color:var(--green);font-weight:600;}
-.labor-warn{color:var(--amber);font-weight:600;}
-.labor-bad{color:var(--red);font-weight:600;}
-
-/* Notes box */
-.notes-section{background:#fff;border:1px solid var(--border);border-left:4px solid var(--gold2);border-radius:0 12px 12px 0;padding:20px 24px;margin-bottom:28px;}
-.notes-section h3{font-family:'DM Serif Display',serif;font-size:16px;color:var(--navy);margin-bottom:12px;}
-.notes-section p{font-size:13px;line-height:1.8;color:#444;margin-bottom:8px;}
-.notes-section ul{margin-left:20px;}
-.notes-section li{font-size:13px;line-height:1.9;color:#444;}
-
-/* Priority locations */
-.priority-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:28px;}
-.priority-card{background:#fff;border:1px solid var(--border);border-radius:12px;padding:18px;}
-.priority-card h4{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--border);}
-.priority-card.red h4{color:var(--red);}
-.priority-card.green h4{color:var(--green);}
-.priority-item{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid #f0ede8;}
-.priority-item:last-child{border-bottom:none;}
-.pi-loc{font-family:'DM Mono',monospace;font-size:13px;font-weight:600;}
-.pi-detail{font-size:11px;color:var(--muted);margin-top:2px;}
-
-.may-goal-cell{
-  background:linear-gradient(135deg,#5c1a1a 0%,#8b2e2e 100%);
-  color:#e8c97a;
-  font-family:'DM Mono',monospace;
-  font-weight:700;
-  font-size:14px;
-  text-align:right;
-  padding:10px 14px;
-  border-left:2px solid #e8c97a;
-  border-right:2px solid #e8c97a;
-}
-thead th.may-goal-hdr{
-  background:#e8c97a;
-  color:#5c1a1a;
-  font-weight:700;
-  border-left:2px solid #c9a227;
-  border-right:2px solid #c9a227;
-}
-tfoot td.may-goal-foot{
-  background:#e8c97a;
-  color:#5c1a1a;
-  border-left:2px solid #c9a227;
-  border-right:2px solid #c9a227;
-}
-
-@media(max-width:768px){
-  .page{padding:12px 10px 40px;}
-  .summary-strip{grid-template-columns:repeat(2,1fr);gap:8px;}
-  .s-val{font-size:20px;}
-  .card{overflow-x:auto;}
-  .card table{min-width:900px;}
-  .priority-grid{grid-template-columns:1fr;}
-  body{overflow-x:hidden;}
-}
+.ideal-hdr{background:#1e3a4a;color:#7dd4f0;border-left:2px solid #3a7a9a;border-right:2px solid #3a7a9a;}
+.goal-hdr{background:#e8c97a;color:#5c1a1a;border-left:2px solid #c9a227;border-right:2px solid #c9a227;}
+tfoot tr{background:#5c1a1a;border-top:2px solid #c9a227;}
+tfoot td{padding:9px 12px;font-size:11px;font-weight:700;color:#e8c97a;font-family:'DM Mono',monospace;}
+tfoot td.lbl{color:#e8c8b0;font-family:'DM Sans',sans-serif;font-size:10px;text-transform:uppercase;}
+tfoot td.r{text-align:right;}
+tfoot td.c{text-align:center;}
+.notes{background:#fff;border:1px solid #d3d1c7;border-left:4px solid #c9a227;border-radius:0 12px 12px 0;padding:20px 24px;margin-bottom:28px;}
+.notes h3{font-family:'DM Serif Display',serif;font-size:16px;color:#5c1a1a;margin-bottom:10px;}
+.notes p{font-size:13px;line-height:1.8;color:#444;margin-bottom:8px;}
+.notes ul{margin-left:18px;}
+.notes li{font-size:13px;line-height:1.9;color:#444;}
+.priority{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:28px;}
+.p-card{background:#fff;border:1px solid #d3d1c7;border-radius:12px;padding:18px;}
+.p-card h4{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid #d3d1c7;}
+.p-card.red h4{color:#c0392b;}
+.p-card.green h4{color:#1a7a4a;}
+.p-item{display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:1px solid #f0ede8;}
+.p-item:last-child{border-bottom:none;}
+.p-loc{font-family:'DM Mono',monospace;font-size:12px;font-weight:600;}
+.p-detail{font-size:10px;color:#888780;margin-top:1px;}
+.dark{background:#2c2c2a;border-radius:12px;padding:22px 26px;color:#f0ede8;margin-bottom:18px;}
+.dark-title{font-family:'DM Serif Display',serif;font-size:17px;color:#e8c97a;margin-bottom:12px;}
 </style>
 </head>
 <body>
-
 <div class="header">
-  <div class="header-left">
+  <div>
     <h1>Georgia — May 2026 TPPH Goals</h1>
     <p>Based on April 2026 Labor Analysis &nbsp;·&nbsp; 20 Locations</p>
   </div>
-  <div class="header-right">
-    <div class="header-badge">May 2026 Planning</div>
-  </div>
+  <div class="badge">May 2026 Planning</div>
 </div>
-
 <div class="page">
-
-  <!-- Summary Cards -->
-  <div class="summary-strip">
-    <div class="s-card">
-      <div class="s-lbl">April Avg TPPH</div>
-      <div class="s-val">5.85</div>
-      <div class="s-sub">Portfolio actual</div>
-    </div>
-    <div class="s-card">
-      <div class="s-lbl">May Portfolio Goal</div>
-      <div class="s-val">6.03</div>
-      <div class="s-sub">+0.18 improvement</div>
-    </div>
-    
-    <div class="s-card">
-      <div class="s-lbl">April OT Hours</div>
-      <div class="s-val">2,979</div>
-      <div class="s-sub">Key area to reduce</div>
-    </div>
+  <div class="cards">
+    <div class="card"><div class="s-lbl">April Avg TPPH</div><div class="s-val">5.85</div><div class="s-sub">Portfolio actual</div></div>
+    <div class="card"><div class="s-lbl">May Portfolio Goal</div><div class="s-val">6.03</div><div class="s-sub">+0.18 improvement</div></div>
+    <div class="card"><div class="s-lbl">April OT Hours</div><div class="s-val">2,979</div><div class="s-sub">Key area to reduce</div></div>
   </div>
 
-  <!-- Goals Table -->
-  <div class="sec-title">May TPPH Goals by Location</div>
-  <div class="card">
+  <div class="sec-title">May TPPH Goals by Location — April 2026</div>
+  <div class="tbl-wrap">
     <table>
       <thead>
         <tr>
           <th>Location</th>
-          <th class="r">Apr TPPH</th>
+          <th class="r ideal-hdr">Ideal TPPH April</th>
+          <th class="r">Actual TPPH April</th>
           <th class="r">Labor %</th>
           <th class="r">Avg Rate</th>
           <th class="r">OT Hrs</th>
           <th class="r">Act vs Need</th>
           <th class="c">Tier</th>
-          <th class="r may-goal-hdr">May Goal</th>
+          <th class="r goal-hdr">May Goal</th>
           <th class="c">Improvement</th>
-          <th>Focus</th>
         </tr>
       </thead>
-      <tbody id="goalBody"></tbody>
+      <tbody>
+<tr style="background:#feffd6;border-top:1px solid #d3d1c7;">
+      <td style="padding:9px 12px;font-family:DM Mono,monospace;font-weight:600;font-size:12px;color:#5a5a00;">455 - Macon Rd</td>
+      <td style="padding:9px 12px;text-align:right;background:linear-gradient(135deg,#1e3a4a,#2a5068);border-left:2px solid #3a7a9a;border-right:2px solid #3a7a9a;">
+        <div style="font-family:DM Mono,monospace;font-size:13px;font-weight:700;color:#ffffff;">6.03</div>
+        <div style="font-size:9px;color:#5ba8c4;margin-top:2px;">Add 32 hrs</div>
+      </td>
+      <td style="padding:9px 12px;text-align:right;font-family:DM Mono,monospace;font-size:13px;color:#5a5a00;">6.07</td>
+      <td style="padding:9px 12px;text-align:right;font-size:12px;color:#1a7a4a;font-weight:600;">19.9%</td>
+      <td style="padding:9px 12px;text-align:right;font-family:DM Mono,monospace;font-size:12px;color:#5a5a00;">$11.54</td>
+      <td style="padding:9px 12px;text-align:right;font-family:DM Mono,monospace;font-size:12px;color:#5a5a00;">106</td>
+      <td style="padding:9px 12px;text-align:right;font-family:DM Mono,monospace;font-size:12px;color:#1a7a4a;font-weight:600;">-32</td>
+      <td style="padding:9px 12px;text-align:center;"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:700;text-transform:uppercase;background:#feffd6;color:#5a5a00;">Average</span></td>
+      <td style="padding:9px 12px;text-align:right;background:linear-gradient(135deg,#e8c97a,#c9a227);border-left:2px solid #c9a227;border-right:2px solid #c9a227;">
+        <span style="font-family:DM Mono,monospace;font-size:14px;font-weight:700;color:#5c1a1a;">6.27</span>
+      </td>
+      <td style="padding:9px 12px;text-align:center;"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;background:#d6f0e0;color:#0a5c28;">+0.20</span></td>
+    </tr>
+<tr style="background:#fce8e8;border-top:1px solid #d3d1c7;">
+      <td style="padding:9px 12px;font-family:DM Mono,monospace;font-weight:600;font-size:12px;color:#8b1a1a;">02066 - Commerce</td>
+      <td style="padding:9px 12px;text-align:right;background:linear-gradient(135deg,#1e3a4a,#2a5068);border-left:2px solid #3a7a9a;border-right:2px solid #3a7a9a;">
+        <div style="font-family:DM Mono,monospace;font-size:13px;font-weight:700;color:#ffffff;">5.45</div>
+        <div style="font-size:9px;color:#5ba8c4;margin-top:2px;">Cut 317 hrs</div>
+      </td>
+      <td style="padding:9px 12px;text-align:right;font-family:DM Mono,monospace;font-size:13px;color:#8b1a1a;">5.06</td>
+      <td style="padding:9px 12px;text-align:right;font-size:12px;color:#c0392b;font-weight:600;">23.7%</td>
+      <td style="padding:9px 12px;text-align:right;font-family:DM Mono,monospace;font-size:12px;color:#8b1a1a;">$12.50</td>
+      <td style="padding:9px 12px;text-align:right;font-family:DM Mono,monospace;font-size:12px;color:#8b1a1a;">252</td>
+      <td style="padding:9px 12px;text-align:right;font-family:DM Mono,monospace;font-size:12px;color:#c0392b;font-weight:600;">+317</td>
+      <td style="padding:9px 12px;text-align:center;"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:700;text-transform:uppercase;background:#fce8e8;color:#8b1a1a;">Urgent</span></td>
+      <td style="padding:9px 12px;text-align:right;background:linear-gradient(135deg,#e8c97a,#c9a227);border-left:2px solid #c9a227;border-right:2px solid #c9a227;">
+        <span style="font-family:DM Mono,monospace;font-size:14px;font-weight:700;color:#5c1a1a;">5.46</span>
+      </td>
+      <td style="padding:9px 12px;text-align:center;"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;background:#d6f0e0;color:#0a5c28;">+0.40</span></td>
+    </tr>
+<tr style="background:#fce8e8;border-top:1px solid #d3d1c7;">
+      <td style="padding:9px 12px;font-family:DM Mono,monospace;font-weight:600;font-size:12px;color:#8b1a1a;">02435 - US 280</td>
+      <td style="padding:9px 12px;text-align:right;background:linear-gradient(135deg,#1e3a4a,#2a5068);border-left:2px solid #3a7a9a;border-right:2px solid #3a7a9a;">
+        <div style="font-family:DM Mono,monospace;font-size:13px;font-weight:700;color:#ffffff;">5.54</div>
+        <div style="font-size:9px;color:#5ba8c4;margin-top:2px;">Cut 543 hrs</div>
+      </td>
+      <td style="padding:9px 12px;text-align:right;font-family:DM Mono,monospace;font-size:13px;color:#8b1a1a;">4.84</td>
+      <td style="padding:9px 12px;text-align:right;font-size:12px;color:#c0392b;font-weight:600;">23.5%</td>
+      <td style="padding:9px 12px;text-align:right;font-family:DM Mono,monospace;font-size:12px;color:#8b1a1a;">$12.04</td>
+      <td style="padding:9px 12px;text-align:right;font-family:DM Mono,monospace;font-size:12px;color:#8b1a1a;">222</td>
+      <td style="padding:9px 12px;text-align:right;font-family:DM Mono,monospace;font-size:12px;color:#c0392b;font-weight:600;">+543</td>
+      <td style="padding:9px 12px;text-align:center;"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:700;text-transform:uppercase;background:#fce8e8;color:#8b1a1a;">Urgent</span></td>
+      <td style="padding:9px 12px;text-align:right;background:linear-gradient(135deg,#e8c97a,#c9a227);border-left:2px solid #c9a227;border-right:2px solid #c9a227;">
+        <span style="font-family:DM Mono,monospace;font-size:14px;font-weight:700;color:#5c1a1a;">5.29</span>
+      </td>
+      <td style="padding:9px 12px;text-align:center;"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;background:#d6f0e0;color:#0a5c28;">+0.45</span></td>
+    </tr>
+<tr style="background:#eaf7d6;border-top:1px solid #d3d1c7;">
+      <td style="padding:9px 12px;font-family:DM Mono,monospace;font-weight:600;font-size:12px;color:#2d5a0a;">03895 - Valley</td>
+      <td style="padding:9px 12px;text-align:right;background:linear-gradient(135deg,#1e3a4a,#2a5068);border-left:2px solid #3a7a9a;border-right:2px solid #3a7a9a;">
+        <div style="font-family:DM Mono,monospace;font-size:13px;font-weight:700;color:#ffffff;">6.68</div>
+        <div style="font-size:9px;color:#5ba8c4;margin-top:2px;">Add 71 hrs</div>
+      </td>
+      <td style="padding:9px 12px;text-align:right;font-family:DM Mono,monospace;font-size:13px;color:#2d5a0a;">6.78</td>
+      <td style="padding:9px 12px;text-align:right;font-size:12px;color:#1a7a4a;font-weight:600;">17.3%</td>
+      <td style="padding:9px 12px;text-align:right;font-family:DM Mono,monospace;font-size:12px;color:#2d5a0a;">$12.62</td>
+      <td style="padding:9px 12px;text-align:right;font-family:DM Mono,monospace;font-size:12px;color:#2d5a0a;">199</td>
+      <td style="padding:9px 12px;text-align:right;font-family:DM Mono,monospace;font-size:12px;color:#1a7a4a;font-weight:600;">-71</td>
+      <td style="padding:9px 12px;text-align:center;"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:700;text-transform:uppercase;background:#eaf7d6;color:#2d5a0a;">Strong</span></td>
+      <td style="padding:9px 12px;text-align:right;background:linear-gradient(135deg,#e8c97a,#c9a227);border-left:2px solid #c9a227;border-right:2px solid #c9a227;">
+        <span style="font-family:DM Mono,monospace;font-size:14px;font-weight:700;color:#5c1a1a;">6.88</span>
+      </td>
+      <td style="padding:9px 12px;text-align:center;"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;background:#d6f0e0;color:#0a5c28;">+0.10</span></td>
+    </tr>
+<tr style="background:#fce8e8;border-top:1px solid #d3d1c7;">
+      <td style="padding:9px 12px;font-family:DM Mono,monospace;font-weight:600;font-size:12px;color:#8b1a1a;">05031 - Airport</td>
+      <td style="padding:9px 12px;text-align:right;background:linear-gradient(135deg,#1e3a4a,#2a5068);border-left:2px solid #3a7a9a;border-right:2px solid #3a7a9a;">
+        <div style="font-family:DM Mono,monospace;font-size:13px;font-weight:700;color:#ffffff;">5.93</div>
+        <div style="font-size:9px;color:#5ba8c4;margin-top:2px;">Cut 382 hrs</div>
+      </td>
+      <td style="padding:9px 12px;text-align:right;font-family:DM Mono,monospace;font-size:13px;color:#8b1a1a;">5.41</td>
+      <td style="padding:9px 12px;text-align:right;font-size:12px;color:#b87a00;font-weight:600;">21.9%</td>
+      <td style="padding:9px 12px;text-align:right;font-family:DM Mono,monospace;font-size:12px;color:#8b1a1a;">$11.81</td>
+      <td style="padding:9px 12px;text-align:right;font-family:DM Mono,monospace;font-size:12px;color:#8b1a1a;">184</td>
+      <td style="padding:9px 12px;text-align:right;font-family:DM Mono,monospace;font-size:12px;color:#c0392b;font-weight:600;">+382</td>
+      <td style="padding:9px 12px;text-align:center;"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:700;text-transform:uppercase;background:#fce8e8;color:#8b1a1a;">Urgent</span></td>
+      <td style="padding:9px 12px;text-align:right;background:linear-gradient(135deg,#e8c97a,#c9a227);border-left:2px solid #c9a227;border-right:2px solid #c9a227;">
+        <span style="font-family:DM Mono,monospace;font-size:14px;font-weight:700;color:#5c1a1a;">5.76</span>
+      </td>
+      <td style="padding:9px 12px;text-align:center;"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;background:#d6f0e0;color:#0a5c28;">+0.35</span></td>
+    </tr>
+<tr style="background:#feffd6;border-top:1px solid #d3d1c7;">
+      <td style="padding:9px 12px;font-family:DM Mono,monospace;font-weight:600;font-size:12px;color:#5a5a00;">06080 - Victory Dr</td>
+      <td style="padding:9px 12px;text-align:right;background:linear-gradient(135deg,#1e3a4a,#2a5068);border-left:2px solid #3a7a9a;border-right:2px solid #3a7a9a;">
+        <div style="font-family:DM Mono,monospace;font-size:13px;font-weight:700;color:#ffffff;">5.94</div>
+        <div style="font-size:9px;color:#5ba8c4;margin-top:2px;">Add 71 hrs</div>
+      </td>
+      <td style="padding:9px 12px;text-align:right;font-family:DM Mono,monospace;font-size:13px;color:#5a5a00;">6.00</td>
+      <td style="padding:9px 12px;text-align:right;font-size:12px;color:#1a7a4a;font-weight:600;">18.2%</td>
+      <td style="padding:9px 12px;text-align:right;font-family:DM Mono,monospace;font-size:12px;color:#5a5a00;">$12.07</td>
+      <td style="padding:9px 12px;text-align:right;font-family:DM Mono,monospace;font-size:12px;color:#5a5a00;">198</td>
+      <td style="padding:9px 12px;text-align:right;font-family:DM Mono,monospace;font-size:12px;color:#1a7a4a;font-weight:600;">-71</td>
+      <td style="padding:9px 12px;text-align:center;"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:700;text-transform:uppercase;background:#feffd6;color:#5a5a00;">Average</span></td>
+      <td style="padding:9px 12px;text-align:right;background:linear-gradient(135deg,#e8c97a,#c9a227);border-left:2px solid #c9a227;border-right:2px solid #c9a227;">
+        <span style="font-family:DM Mono,monospace;font-size:14px;font-weight:700;color:#5c1a1a;">6.20</span>
+      </td>
+      <td style="padding:9px 12px;text-align:center;"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;background:#d6f0e0;color:#0a5c28;">+0.20</span></td>
+    </tr>
+<tr style="background:#eaf7d6;border-top:1px solid #d3d1c7;">
+      <td style="padding:9px 12px;font-family:DM Mono,monospace;font-weight:600;font-size:12px;color:#2d5a0a;">07562 - 4th Ave</td>
+      <td style="padding:9px 12px;text-align:right;background:linear-gradient(135deg,#1e3a4a,#2a5068);border-left:2px solid #3a7a9a;border-right:2px solid #3a7a9a;">
+        <div style="font-family:DM Mono,monospace;font-size:13px;font-weight:700;color:#ffffff;">6.64</div>
+        <div style="font-size:9px;color:#5ba8c4;margin-top:2px;">Cut 63 hrs</div>
+      </td>
+      <td style="padding:9px 12px;text-align:right;font-family:DM Mono,monospace;font-size:13px;color:#2d5a0a;">6.56</td>
+      <td style="padding:9px 12px;text-align:right;font-size:12px;color:#c0392b;font-weight:600;">26.7%</td>
+      <td style="padding:9px 12px;text-align:right;font-family:DM Mono,monospace;font-size:12px;color:#2d5a0a;">$15.87</td>
+      <td style="padding:9px 12px;text-align:right;font-family:DM Mono,monospace;font-size:12px;color:#2d5a0a;">113</td>
+      <td style="padding:9px 12px;text-align:right;font-family:DM Mono,monospace;font-size:12px;color:#b87a00;font-weight:600;">+63</td>
+      <td style="padding:9px 12px;text-align:center;"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:700;text-transform:uppercase;background:#eaf7d6;color:#2d5a0a;">Strong</span></td>
+      <td style="padding:9px 12px;text-align:right;background:linear-gradient(135deg,#e8c97a,#c9a227);border-left:2px solid #c9a227;border-right:2px solid #c9a227;">
+        <span style="font-family:DM Mono,monospace;font-size:14px;font-weight:700;color:#5c1a1a;">6.71</span>
+      </td>
+      <td style="padding:9px 12px;text-align:center;"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;background:#d6f0e0;color:#0a5c28;">+0.15</span></td>
+    </tr>
+<tr style="background:#fef0c8;border-top:1px solid #d3d1c7;">
+      <td style="padding:9px 12px;font-family:DM Mono,monospace;font-weight:600;font-size:12px;color:#6b3a00;">10521 - Stadium</td>
+      <td style="padding:9px 12px;text-align:right;background:linear-gradient(135deg,#1e3a4a,#2a5068);border-left:2px solid #3a7a9a;border-right:2px solid #3a7a9a;">
+        <div style="font-family:DM Mono,monospace;font-size:13px;font-weight:700;color:#ffffff;">5.58</div>
+        <div style="font-size:9px;color:#5ba8c4;margin-top:2px;">Cut 37 hrs</div>
+      </td>
+      <td style="padding:9px 12px;text-align:right;font-family:DM Mono,monospace;font-size:13px;color:#6b3a00;">5.53</td>
+      <td style="padding:9px 12px;text-align:right;font-size:12px;color:#b87a00;font-weight:600;">21.8%</td>
+      <td style="padding:9px 12px;text-align:right;font-family:DM Mono,monospace;font-size:12px;color:#6b3a00;">$11.78</td>
+      <td style="padding:9px 12px;text-align:right;font-family:DM Mono,monospace;font-size:12px;color:#6b3a00;">168</td>
+      <td style="padding:9px 12px;text-align:right;font-family:DM Mono,monospace;font-size:12px;color:#b87a00;font-weight:600;">+37</td>
+      <td style="padding:9px 12px;text-align:center;"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:700;text-transform:uppercase;background:#fef0c8;color:#6b3a00;">Below</span></td>
+      <td style="padding:9px 12px;text-align:right;background:linear-gradient(135deg,#e8c97a,#c9a227);border-left:2px solid #c9a227;border-right:2px solid #c9a227;">
+        <span style="font-family:DM Mono,monospace;font-size:14px;font-weight:700;color:#5c1a1a;">5.83</span>
+      </td>
+      <td style="padding:9px 12px;text-align:center;"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;background:#d6f0e0;color:#0a5c28;">+0.30</span></td>
+    </tr>
+<tr style="background:#feffd6;border-top:1px solid #d3d1c7;">
+      <td style="padding:9px 12px;font-family:DM Mono,monospace;font-weight:600;font-size:12px;color:#5a5a00;">11362 - Milgen Rd</td>
+      <td style="padding:9px 12px;text-align:right;background:linear-gradient(135deg,#1e3a4a,#2a5068);border-left:2px solid #3a7a9a;border-right:2px solid #3a7a9a;">
+        <div style="font-family:DM Mono,monospace;font-size:13px;font-weight:700;color:#ffffff;">6.29</div>
+        <div style="font-size:9px;color:#5ba8c4;margin-top:2px;">Cut 236 hrs</div>
+      </td>
+      <td style="padding:9px 12px;text-align:right;font-family:DM Mono,monospace;font-size:13px;color:#5a5a00;">5.97</td>
+      <td style="padding:9px 12px;text-align:right;font-size:12px;color:#b87a00;font-weight:600;">21.1%</td>
+      <td style="padding:9px 12px;text-align:right;font-family:DM Mono,monospace;font-size:12px;color:#5a5a00;">$12.02</td>
+      <td style="padding:9px 12px;text-align:right;font-family:DM Mono,monospace;font-size:12px;color:#5a5a00;">44</td>
+      <td style="padding:9px 12px;text-align:right;font-family:DM Mono,monospace;font-size:12px;color:#c0392b;font-weight:600;">+236</td>
+      <td style="padding:9px 12px;text-align:center;"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:700;text-transform:uppercase;background:#feffd6;color:#5a5a00;">Average</span></td>
+      <td style="padding:9px 12px;text-align:right;background:linear-gradient(135deg,#e8c97a,#c9a227);border-left:2px solid #c9a227;border-right:2px solid #c9a227;">
+        <span style="font-family:DM Mono,monospace;font-size:14px;font-weight:700;color:#5c1a1a;">6.22</span>
+      </td>
+      <td style="padding:9px 12px;text-align:center;"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;background:#d6f0e0;color:#0a5c28;">+0.25</span></td>
+    </tr>
+<tr style="background:#feffd6;border-top:1px solid #d3d1c7;">
+      <td style="padding:9px 12px;font-family:DM Mono,monospace;font-weight:600;font-size:12px;color:#5a5a00;">11743 - Whitesville</td>
+      <td style="padding:9px 12px;text-align:right;background:linear-gradient(135deg,#1e3a4a,#2a5068);border-left:2px solid #3a7a9a;border-right:2px solid #3a7a9a;">
+        <div style="font-family:DM Mono,monospace;font-size:13px;font-weight:700;color:#ffffff;">5.79</div>
+        <div style="font-size:9px;color:#5ba8c4;margin-top:2px;">Add 94 hrs</div>
+      </td>
+      <td style="padding:9px 12px;text-align:right;font-family:DM Mono,monospace;font-size:13px;color:#5a5a00;">5.91</td>
+      <td style="padding:9px 12px;text-align:right;font-size:12px;color:#1a7a4a;font-weight:600;">19.4%</td>
+      <td style="padding:9px 12px;text-align:right;font-family:DM Mono,monospace;font-size:12px;color:#5a5a00;">$12.47</td>
+      <td style="padding:9px 12px;text-align:right;font-family:DM Mono,monospace;font-size:12px;color:#5a5a00;">150</td>
+      <td style="padding:9px 12px;text-align:right;font-family:DM Mono,monospace;font-size:12px;color:#1a7a4a;font-weight:600;">-94</td>
+      <td style="padding:9px 12px;text-align:center;"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:700;text-transform:uppercase;background:#feffd6;color:#5a5a00;">Average</span></td>
+      <td style="padding:9px 12px;text-align:right;background:linear-gradient(135deg,#e8c97a,#c9a227);border-left:2px solid #c9a227;border-right:2px solid #c9a227;">
+        <span style="font-family:DM Mono,monospace;font-size:14px;font-weight:700;color:#5c1a1a;">6.11</span>
+      </td>
+      <td style="padding:9px 12px;text-align:center;"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;background:#d6f0e0;color:#0a5c28;">+0.20</span></td>
+    </tr>
+<tr style="background:#feffd6;border-top:1px solid #d3d1c7;">
+      <td style="padding:9px 12px;font-family:DM Mono,monospace;font-weight:600;font-size:12px;color:#5a5a00;">11822 - Buena Vista</td>
+      <td style="padding:9px 12px;text-align:right;background:linear-gradient(135deg,#1e3a4a,#2a5068);border-left:2px solid #3a7a9a;border-right:2px solid #3a7a9a;">
+        <div style="font-family:DM Mono,monospace;font-size:13px;font-weight:700;color:#ffffff;">6.02</div>
+        <div style="font-size:9px;color:#5ba8c4;margin-top:2px;">Add 92 hrs</div>
+      </td>
+      <td style="padding:9px 12px;text-align:right;font-family:DM Mono,monospace;font-size:13px;color:#5a5a00;">6.12</td>
+      <td style="padding:9px 12px;text-align:right;font-size:12px;color:#1a7a4a;font-weight:600;">19.5%</td>
+      <td style="padding:9px 12px;text-align:right;font-family:DM Mono,monospace;font-size:12px;color:#5a5a00;">$12.24</td>
+      <td style="padding:9px 12px;text-align:right;font-family:DM Mono,monospace;font-size:12px;color:#5a5a00;">156</td>
+      <td style="padding:9px 12px;text-align:right;font-family:DM Mono,monospace;font-size:12px;color:#1a7a4a;font-weight:600;">-92</td>
+      <td style="padding:9px 12px;text-align:center;"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:700;text-transform:uppercase;background:#feffd6;color:#5a5a00;">Average</span></td>
+      <td style="padding:9px 12px;text-align:right;background:linear-gradient(135deg,#e8c97a,#c9a227);border-left:2px solid #c9a227;border-right:2px solid #c9a227;">
+        <span style="font-family:DM Mono,monospace;font-size:14px;font-weight:700;color:#5c1a1a;">6.22</span>
+      </td>
+      <td style="padding:9px 12px;text-align:center;"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;background:#d6f0e0;color:#0a5c28;">+0.10</span></td>
+    </tr>
+<tr style="background:#feffd6;border-top:1px solid #d3d1c7;">
+      <td style="padding:9px 12px;font-family:DM Mono,monospace;font-weight:600;font-size:12px;color:#5a5a00;">11915 - Manchester</td>
+      <td style="padding:9px 12px;text-align:right;background:linear-gradient(135deg,#1e3a4a,#2a5068);border-left:2px solid #3a7a9a;border-right:2px solid #3a7a9a;">
+        <div style="font-family:DM Mono,monospace;font-size:13px;font-weight:700;color:#ffffff;">6.26</div>
+        <div style="font-size:9px;color:#5ba8c4;margin-top:2px;">Cut 78 hrs</div>
+      </td>
+      <td style="padding:9px 12px;text-align:right;font-family:DM Mono,monospace;font-size:13px;color:#5a5a00;">6.15</td>
+      <td style="padding:9px 12px;text-align:right;font-size:12px;color:#b87a00;font-weight:600;">20.9%</td>
+      <td style="padding:9px 12px;text-align:right;font-family:DM Mono,monospace;font-size:12px;color:#5a5a00;">$12.13</td>
+      <td style="padding:9px 12px;text-align:right;font-family:DM Mono,monospace;font-size:12px;color:#5a5a00;">87</td>
+      <td style="padding:9px 12px;text-align:right;font-family:DM Mono,monospace;font-size:12px;color:#b87a00;font-weight:600;">+78</td>
+      <td style="padding:9px 12px;text-align:center;"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:700;text-transform:uppercase;background:#feffd6;color:#5a5a00;">Average</span></td>
+      <td style="padding:9px 12px;text-align:right;background:linear-gradient(135deg,#e8c97a,#c9a227);border-left:2px solid #c9a227;border-right:2px solid #c9a227;">
+        <span style="font-family:DM Mono,monospace;font-size:14px;font-weight:700;color:#5c1a1a;">6.35</span>
+      </td>
+      <td style="padding:9px 12px;text-align:center;"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;background:#d6f0e0;color:#0a5c28;">+0.20</span></td>
+    </tr>
+<tr style="background:#feffd6;border-top:1px solid #d3d1c7;">
+      <td style="padding:9px 12px;font-family:DM Mono,monospace;font-weight:600;font-size:12px;color:#5a5a00;">15069 - Bradley Pk</td>
+      <td style="padding:9px 12px;text-align:right;background:linear-gradient(135deg,#1e3a4a,#2a5068);border-left:2px solid #3a7a9a;border-right:2px solid #3a7a9a;">
+        <div style="font-family:DM Mono,monospace;font-size:13px;font-weight:700;color:#ffffff;">6.54</div>
+        <div style="font-size:9px;color:#5ba8c4;margin-top:2px;">Cut 424 hrs</div>
+      </td>
+      <td style="padding:9px 12px;text-align:right;font-family:DM Mono,monospace;font-size:13px;color:#5a5a00;">5.94</td>
+      <td style="padding:9px 12px;text-align:right;font-size:12px;color:#b87a00;font-weight:600;">20.6%</td>
+      <td style="padding:9px 12px;text-align:right;font-family:DM Mono,monospace;font-size:12px;color:#5a5a00;">$11.60</td>
+      <td style="padding:9px 12px;text-align:right;font-family:DM Mono,monospace;font-size:12px;color:#5a5a00;">113</td>
+      <td style="padding:9px 12px;text-align:right;font-family:DM Mono,monospace;font-size:12px;color:#c0392b;font-weight:600;">+424</td>
+      <td style="padding:9px 12px;text-align:center;"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:700;text-transform:uppercase;background:#feffd6;color:#5a5a00;">Average</span></td>
+      <td style="padding:9px 12px;text-align:right;background:linear-gradient(135deg,#e8c97a,#c9a227);border-left:2px solid #c9a227;border-right:2px solid #c9a227;">
+        <span style="font-family:DM Mono,monospace;font-size:14px;font-weight:700;color:#5c1a1a;">6.14</span>
+      </td>
+      <td style="padding:9px 12px;text-align:center;"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;background:#d6f0e0;color:#0a5c28;">+0.20</span></td>
+    </tr>
+<tr style="background:#fce8e8;border-top:1px solid #d3d1c7;">
+      <td style="padding:9px 12px;font-family:DM Mono,monospace;font-weight:600;font-size:12px;color:#8b1a1a;">19461 - East Main</td>
+      <td style="padding:9px 12px;text-align:right;background:linear-gradient(135deg,#1e3a4a,#2a5068);border-left:2px solid #3a7a9a;border-right:2px solid #3a7a9a;">
+        <div style="font-family:DM Mono,monospace;font-size:13px;font-weight:700;color:#ffffff;">5.59</div>
+        <div style="font-size:9px;color:#5ba8c4;margin-top:2px;">Cut 425 hrs</div>
+      </td>
+      <td style="padding:9px 12px;text-align:right;font-family:DM Mono,monospace;font-size:13px;color:#8b1a1a;">4.98</td>
+      <td style="padding:9px 12px;text-align:right;font-size:12px;color:#b87a00;font-weight:600;">21.4%</td>
+      <td style="padding:9px 12px;text-align:right;font-family:DM Mono,monospace;font-size:12px;color:#8b1a1a;">$12.30</td>
+      <td style="padding:9px 12px;text-align:right;font-family:DM Mono,monospace;font-size:12px;color:#8b1a1a;">180</td>
+      <td style="padding:9px 12px;text-align:right;font-family:DM Mono,monospace;font-size:12px;color:#c0392b;font-weight:600;">+425</td>
+      <td style="padding:9px 12px;text-align:center;"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:700;text-transform:uppercase;background:#fce8e8;color:#8b1a1a;">Urgent</span></td>
+      <td style="padding:9px 12px;text-align:right;background:linear-gradient(135deg,#e8c97a,#c9a227);border-left:2px solid #c9a227;border-right:2px solid #c9a227;">
+        <span style="font-family:DM Mono,monospace;font-size:14px;font-weight:700;color:#5c1a1a;">5.43</span>
+      </td>
+      <td style="padding:9px 12px;text-align:center;"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;background:#d6f0e0;color:#0a5c28;">+0.45</span></td>
+    </tr>
+<tr style="background:#fce8e8;border-top:1px solid #d3d1c7;">
+      <td style="padding:9px 12px;font-family:DM Mono,monospace;font-weight:600;font-size:12px;color:#8b1a1a;">24343 - N Veterans</td>
+      <td style="padding:9px 12px;text-align:right;background:linear-gradient(135deg,#1e3a4a,#2a5068);border-left:2px solid #3a7a9a;border-right:2px solid #3a7a9a;">
+        <div style="font-family:DM Mono,monospace;font-size:13px;font-weight:700;color:#ffffff;">6.05</div>
+        <div style="font-size:9px;color:#5ba8c4;margin-top:2px;">Add 668 hrs</div>
+      </td>
+      <td style="padding:9px 12px;text-align:right;font-family:DM Mono,monospace;font-size:13px;color:#8b1a1a;">6.95</td>
+      <td style="padding:9px 12px;text-align:right;font-size:12px;color:#1a7a4a;font-weight:600;">17.5%</td>
+      <td style="padding:9px 12px;text-align:right;font-family:DM Mono,monospace;font-size:12px;color:#8b1a1a;">$12.29</td>
+      <td style="padding:9px 12px;text-align:right;font-family:DM Mono,monospace;font-size:12px;color:#8b1a1a;">61</td>
+      <td style="padding:9px 12px;text-align:right;font-family:DM Mono,monospace;font-size:12px;color:#1a7a4a;font-weight:600;">-668</td>
+      <td style="padding:9px 12px;text-align:center;"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:700;text-transform:uppercase;background:#fce8e8;color:#8b1a1a;">Urgent</span></td>
+      <td style="padding:9px 12px;text-align:right;background:linear-gradient(135deg,#e8c97a,#c9a227);border-left:2px solid #c9a227;border-right:2px solid #c9a227;">
+        <span style="font-family:DM Mono,monospace;font-size:14px;font-weight:700;color:#5c1a1a;">6.65</span>
+      </td>
+      <td style="padding:9px 12px;text-align:center;"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;background:#fce8e8;color:#8b1a1a;">-0.30</span></td>
+    </tr>
+<tr style="background:#fce8e8;border-top:1px solid #d3d1c7;">
+      <td style="padding:9px 12px;font-family:DM Mono,monospace;font-weight:600;font-size:12px;color:#8b1a1a;">24344 - Ladonia</td>
+      <td style="padding:9px 12px;text-align:right;background:linear-gradient(135deg,#1e3a4a,#2a5068);border-left:2px solid #3a7a9a;border-right:2px solid #3a7a9a;">
+        <div style="font-family:DM Mono,monospace;font-size:13px;font-weight:700;color:#ffffff;">5.30</div>
+        <div style="font-size:9px;color:#5ba8c4;margin-top:2px;">Cut 188 hrs</div>
+      </td>
+      <td style="padding:9px 12px;text-align:right;font-family:DM Mono,monospace;font-size:13px;color:#8b1a1a;">5.06</td>
+      <td style="padding:9px 12px;text-align:right;font-size:12px;color:#b87a00;font-weight:600;">21.5%</td>
+      <td style="padding:9px 12px;text-align:right;font-family:DM Mono,monospace;font-size:12px;color:#8b1a1a;">$11.96</td>
+      <td style="padding:9px 12px;text-align:right;font-family:DM Mono,monospace;font-size:12px;color:#8b1a1a;">177</td>
+      <td style="padding:9px 12px;text-align:right;font-family:DM Mono,monospace;font-size:12px;color:#b87a00;font-weight:600;">+188</td>
+      <td style="padding:9px 12px;text-align:center;"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:700;text-transform:uppercase;background:#fce8e8;color:#8b1a1a;">Urgent</span></td>
+      <td style="padding:9px 12px;text-align:right;background:linear-gradient(135deg,#e8c97a,#c9a227);border-left:2px solid #c9a227;border-right:2px solid #c9a227;">
+        <span style="font-family:DM Mono,monospace;font-size:14px;font-weight:700;color:#5c1a1a;">5.46</span>
+      </td>
+      <td style="padding:9px 12px;text-align:center;"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;background:#d6f0e0;color:#0a5c28;">+0.40</span></td>
+    </tr>
+<tr style="background:#feffd6;border-top:1px solid #d3d1c7;">
+      <td style="padding:9px 12px;font-family:DM Mono,monospace;font-weight:600;font-size:12px;color:#5a5a00;">25063 - Lees Xing</td>
+      <td style="padding:9px 12px;text-align:right;background:linear-gradient(135deg,#1e3a4a,#2a5068);border-left:2px solid #3a7a9a;border-right:2px solid #3a7a9a;">
+        <div style="font-family:DM Mono,monospace;font-size:13px;font-weight:700;color:#ffffff;">6.36</div>
+        <div style="font-size:9px;color:#5ba8c4;margin-top:2px;">Cut 248 hrs</div>
+      </td>
+      <td style="padding:9px 12px;text-align:right;font-family:DM Mono,monospace;font-size:13px;color:#5a5a00;">6.02</td>
+      <td style="padding:9px 12px;text-align:right;font-size:12px;color:#b87a00;font-weight:600;">21.2%</td>
+      <td style="padding:9px 12px;text-align:right;font-family:DM Mono,monospace;font-size:12px;color:#5a5a00;">$12.67</td>
+      <td style="padding:9px 12px;text-align:right;font-family:DM Mono,monospace;font-size:12px;color:#5a5a00;">187</td>
+      <td style="padding:9px 12px;text-align:right;font-family:DM Mono,monospace;font-size:12px;color:#c0392b;font-weight:600;">+248</td>
+      <td style="padding:9px 12px;text-align:center;"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:700;text-transform:uppercase;background:#feffd6;color:#5a5a00;">Average</span></td>
+      <td style="padding:9px 12px;text-align:right;background:linear-gradient(135deg,#e8c97a,#c9a227);border-left:2px solid #c9a227;border-right:2px solid #c9a227;">
+        <span style="font-family:DM Mono,monospace;font-size:14px;font-weight:700;color:#5c1a1a;">6.27</span>
+      </td>
+      <td style="padding:9px 12px;text-align:center;"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;background:#d6f0e0;color:#0a5c28;">+0.25</span></td>
+    </tr>
+<tr style="background:#fce8e8;border-top:1px solid #d3d1c7;">
+      <td style="padding:9px 12px;font-family:DM Mono,monospace;font-weight:600;font-size:12px;color:#8b1a1a;">31329 - 431 North</td>
+      <td style="padding:9px 12px;text-align:right;background:linear-gradient(135deg,#1e3a4a,#2a5068);border-left:2px solid #3a7a9a;border-right:2px solid #3a7a9a;">
+        <div style="font-family:DM Mono,monospace;font-size:13px;font-weight:700;color:#ffffff;">4.90</div>
+        <div style="font-size:9px;color:#5ba8c4;margin-top:2px;">Cut 486 hrs</div>
+      </td>
+      <td style="padding:9px 12px;text-align:right;font-family:DM Mono,monospace;font-size:13px;color:#8b1a1a;">4.30</td>
+      <td style="padding:9px 12px;text-align:right;font-size:12px;color:#c0392b;font-weight:600;">25.7%</td>
+      <td style="padding:9px 12px;text-align:right;font-family:DM Mono,monospace;font-size:12px;color:#8b1a1a;">$11.63</td>
+      <td style="padding:9px 12px;text-align:right;font-family:DM Mono,monospace;font-size:12px;color:#8b1a1a;">111</td>
+      <td style="padding:9px 12px;text-align:right;font-family:DM Mono,monospace;font-size:12px;color:#c0392b;font-weight:600;">+486</td>
+      <td style="padding:9px 12px;text-align:center;"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:700;text-transform:uppercase;background:#fce8e8;color:#8b1a1a;">Urgent</span></td>
+      <td style="padding:9px 12px;text-align:right;background:linear-gradient(135deg,#e8c97a,#c9a227);border-left:2px solid #c9a227;border-right:2px solid #c9a227;">
+        <span style="font-family:DM Mono,monospace;font-size:14px;font-weight:700;color:#5c1a1a;">4.75</span>
+      </td>
+      <td style="padding:9px 12px;text-align:center;"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;background:#d6f0e0;color:#0a5c28;">+0.45</span></td>
+    </tr>
+<tr style="background:#fce8e8;border-top:1px solid #d3d1c7;">
+      <td style="padding:9px 12px;font-family:DM Mono,monospace;font-weight:600;font-size:12px;color:#8b1a1a;">33945 - Lafayette</td>
+      <td style="padding:9px 12px;text-align:right;background:linear-gradient(135deg,#1e3a4a,#2a5068);border-left:2px solid #3a7a9a;border-right:2px solid #3a7a9a;">
+        <div style="font-family:DM Mono,monospace;font-size:13px;font-weight:700;color:#ffffff;">5.91</div>
+        <div style="font-size:9px;color:#5ba8c4;margin-top:2px;">Add 183 hrs</div>
+      </td>
+      <td style="padding:9px 12px;text-align:right;font-family:DM Mono,monospace;font-size:13px;color:#8b1a1a;">6.19</td>
+      <td style="padding:9px 12px;text-align:right;font-size:12px;color:#1a7a4a;font-weight:600;">19.8%</td>
+      <td style="padding:9px 12px;text-align:right;font-family:DM Mono,monospace;font-size:12px;color:#8b1a1a;">$12.37</td>
+      <td style="padding:9px 12px;text-align:right;font-family:DM Mono,monospace;font-size:12px;color:#8b1a1a;">75</td>
+      <td style="padding:9px 12px;text-align:right;font-family:DM Mono,monospace;font-size:12px;color:#1a7a4a;font-weight:600;">-183</td>
+      <td style="padding:9px 12px;text-align:center;"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:700;text-transform:uppercase;background:#fce8e8;color:#8b1a1a;">Urgent</span></td>
+      <td style="padding:9px 12px;text-align:right;background:linear-gradient(135deg,#e8c97a,#c9a227);border-left:2px solid #c9a227;border-right:2px solid #c9a227;">
+        <span style="font-family:DM Mono,monospace;font-size:14px;font-weight:700;color:#5c1a1a;">5.99</span>
+      </td>
+      <td style="padding:9px 12px;text-align:center;"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;background:#fce8e8;color:#8b1a1a;">-0.20</span></td>
+    </tr>
+<tr style="background:#eaf7d6;border-top:1px solid #d3d1c7;">
+      <td style="padding:9px 12px;font-family:DM Mono,monospace;font-weight:600;font-size:12px;color:#2d5a0a;">35634 - Flat Rock</td>
+      <td style="padding:9px 12px;text-align:right;background:linear-gradient(135deg,#1e3a4a,#2a5068);border-left:2px solid #3a7a9a;border-right:2px solid #3a7a9a;">
+        <div style="font-family:DM Mono,monospace;font-size:13px;font-weight:700;color:#ffffff;">6.69</div>
+        <div style="font-size:9px;color:#5ba8c4;margin-top:2px;">Cut 165 hrs</div>
+      </td>
+      <td style="padding:9px 12px;text-align:right;font-family:DM Mono,monospace;font-size:13px;color:#2d5a0a;">6.48</td>
+      <td style="padding:9px 12px;text-align:right;font-size:12px;color:#1a7a4a;font-weight:600;">17.5%</td>
+      <td style="padding:9px 12px;text-align:right;font-family:DM Mono,monospace;font-size:12px;color:#2d5a0a;">$11.64</td>
+      <td style="padding:9px 12px;text-align:right;font-family:DM Mono,monospace;font-size:12px;color:#2d5a0a;">198</td>
+      <td style="padding:9px 12px;text-align:right;font-family:DM Mono,monospace;font-size:12px;color:#b87a00;font-weight:600;">+165</td>
+      <td style="padding:9px 12px;text-align:center;"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:700;text-transform:uppercase;background:#eaf7d6;color:#2d5a0a;">Strong</span></td>
+      <td style="padding:9px 12px;text-align:right;background:linear-gradient(135deg,#e8c97a,#c9a227);border-left:2px solid #c9a227;border-right:2px solid #c9a227;">
+        <span style="font-family:DM Mono,monospace;font-size:14px;font-weight:700;color:#5c1a1a;">6.68</span>
+      </td>
+      <td style="padding:9px 12px;text-align:center;"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;background:#d6f0e0;color:#0a5c28;">+0.20</span></td>
+    </tr>
+
+      </tbody>
       <tfoot>
         <tr>
-          <td class="lbl">Portfolio Total / Average</td>
+          <td class="lbl">Portfolio Average</td>
+          <td class="r" style="background:#1e3a4a;border-left:2px solid #3a7a9a;border-right:2px solid #3a7a9a;">
+            <div style="color:#ffffff;font-size:12px;font-weight:700;">5.97</div>
+            <div style="font-size:9px;color:#5ba8c4;font-weight:400;">vs 5.85 actual</div>
+          </td>
           <td class="r">5.85</td>
           <td class="r">20.6%</td>
           <td class="r">$12.29</td>
           <td class="r">2,979</td>
           <td class="r">+2,382</td>
           <td></td>
-          <td class="may-goal-foot r">6.03</td>
-          <td class="c"><span class="imp-chip imp-md">+0.22</span></td>
-          <td></td>
+          <td class="r" style="background:#e8c97a;color:#5c1a1a;border-left:2px solid #c9a227;border-right:2px solid #c9a227;">6.03</td>
+          <td class="c"><span style="display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;background:#fef0c8;color:#6b3a00;">+0.18</span></td>
         </tr>
       </tfoot>
     </table>
   </div>
 
-  <!-- Priority Focus -->
   <div class="sec-title">Priority Locations for May</div>
-  <div class="priority-grid">
-    <div class="priority-card red">
+  <div class="priority">
+    <div class="p-card red">
       <h4>🚨 Urgent Intervention Needed</h4>
-      <div class="priority-item">
-        <div><div class="pi-loc">31329 — 431 North</div><div class="pi-detail">TPPH 4.30 → Goal 4.70 · Labor 25.7% · 486 hrs over need</div></div>
-        <span class="imp-chip imp-lg">+0.40</span>
-      </div>
-      <div class="priority-item">
-        <div><div class="pi-loc">02435 — US 280 Bypass</div><div class="pi-detail">TPPH 4.84 → Goal 5.24 · Labor 23.5% · 543 hrs over need</div></div>
-        <span class="imp-chip imp-lg">+0.40</span>
-      </div>
-      <div class="priority-item">
-        <div><div class="pi-loc">19461 — East Main</div><div class="pi-detail">TPPH 4.98 → Goal 5.38 · Labor 21.4% · 425 hrs over need</div></div>
-        <span class="imp-chip imp-lg">+0.40</span>
-      </div>
-      <div class="priority-item">
-        <div><div class="pi-loc">02066 — Commerce</div><div class="pi-detail">TPPH 5.06 → Goal 5.46 · Labor 23.7% · 317 hrs over need</div></div>
-        <span class="imp-chip imp-lg">+0.40</span>
-      </div>
-      <div class="priority-item">
-        <div><div class="pi-loc">24344 — Ladonia</div><div class="pi-detail">TPPH 5.06 → Goal 5.46 · Labor 21.5% · 188 hrs over need</div></div>
-        <span class="imp-chip imp-lg">+0.40</span>
-      </div>
+      <div class="p-item"><div><div class="p-loc">31329 — 431 North</div><div class="p-detail">TPPH 4.30 → Goal 4.75 · Labor 25.7% · 486 hrs over</div></div><span style="background:#fce8e8;color:#8b1a1a;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;">+0.45</span></div>
+      <div class="p-item"><div><div class="p-loc">02435 — US 280 Bypass</div><div class="p-detail">TPPH 4.84 → Goal 5.29 · Ideal 5.54 · 543 hrs over</div></div><span style="background:#fce8e8;color:#8b1a1a;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;">+0.45</span></div>
+      <div class="p-item"><div><div class="p-loc">19461 — East Main</div><div class="p-detail">TPPH 4.98 → Goal 5.43 · 425 hrs over</div></div><span style="background:#fce8e8;color:#8b1a1a;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;">+0.45</span></div>
+      <div class="p-item"><div><div class="p-loc">24343 — N. Veterans</div><div class="p-detail">TPPH 6.95 → Goal 6.65 ▼ · 668 hrs understaffed</div></div><span style="background:#fce8e8;color:#8b1a1a;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;">-0.30</span></div>
+      <div class="p-item"><div><div class="p-loc">33945 — Lafayette</div><div class="p-detail">TPPH 6.19 → Goal 5.99 ▼ · 183 hrs understaffed</div></div><span style="background:#fce8e8;color:#8b1a1a;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;">-0.20</span></div>
     </div>
-    <div class="priority-card green">
-      <h4>⭐ Top Performers — Protect & Export</h4>
-      <div class="priority-item">
-        <div><div class="pi-loc">24343 — N. Veterans</div><div class="pi-detail">TPPH 6.95 → Goal 6.65 ▼ · 668 hrs understaffed — must add staff</div></div>
-        <span class="imp-chip imp-lg">-0.30</span>
-      </div>
-      <div class="priority-item">
-        <div><div class="pi-loc">03895 — Valley</div><div class="pi-detail">TPPH 6.78 → Goal 6.88 · Labor 17.3% · Lowest labor %</div></div>
-        <span class="imp-chip imp-sm">+0.10</span>
-      </div>
-      <div class="priority-item">
-        <div><div class="pi-loc">07562 — 4th Ave</div><div class="pi-detail">TPPH 6.56 → Goal 6.71 · Strong GC performance</div></div>
-        <span class="imp-chip imp-sm">+0.15</span>
-      </div>
-      <div class="priority-item">
-        <div><div class="pi-loc">35634 — Flat Rock</div><div class="pi-detail">TPPH 6.48 → Goal 6.63 · Labor 17.5% · Efficient</div></div>
-        <span class="imp-chip imp-sm">+0.15</span>
-      </div>
-      <div class="priority-item">
-        <div><div class="pi-loc">24343 method → share with bottom 5</div><div class="pi-detail">Schedule a peer conversation this week</div></div>
-        <span style="font-size:11px;color:var(--green);font-weight:600;">Action</span>
-      </div>
+    <div class="p-card green">
+      <h4>⭐ Top Performers — Protect &amp; Export</h4>
+      <div class="p-item"><div><div class="p-loc">03895 — Valley</div><div class="p-detail">TPPH 6.78 → Goal 6.88 · Lowest labor % 17.3%</div></div><span style="background:#d6f0e0;color:#0a5c28;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;">+0.10</span></div>
+      <div class="p-item"><div><div class="p-loc">07562 — 4th Ave</div><div class="p-detail">TPPH 6.56 → Goal 6.71 · Ideal 6.64</div></div><span style="background:#d6f0e0;color:#0a5c28;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;">+0.15</span></div>
+      <div class="p-item"><div><div class="p-loc">35634 — Flat Rock</div><div class="p-detail">TPPH 6.48 → Goal 6.68 · Ideal 6.69</div></div><span style="background:#d6f0e0;color:#0a5c28;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;">+0.20</span></div>
+      <div class="p-item"><div><div class="p-loc">Share with bottom 5</div><div class="p-detail">Schedule peer conversation this week</div></div><span style="color:#1a7a4a;font-size:11px;font-weight:600;">Action</span></div>
     </div>
   </div>
 
-  <!-- Notes -->
-  <div class="notes-section">
-    <h3>How These Goals Were Set</h3>
-    <p>May goals were derived from April actual performance using a tiered improvement framework — not arbitrary targets. Each goal reflects what is realistically achievable with focused scheduling discipline in a single month.</p>
+  <div class="notes">
+    <h3>How These Goals Were Set &amp; What Ideal TPPH Means</h3>
+    <p><strong>Ideal TPPH</strong> shows what each location's TPPH would be if their hours worked were adjusted to exactly match their staffing need (zero over or under). It is calculated as: Actual Guest Count ÷ (Actual Hours ± Act vs Need). Green = location would improve with correct staffing. Red = TPPH was inflated by understaffing and will drop when properly staffed.</p>
+    <p><strong>May goals</strong> were set using a tiered improvement framework:</p>
     <ul>
-      <li><strong>Top performers (TPPH ≥ 6.75):</strong> +0.10 — maintain excellence, small stretch to protect position</li>
-      <li><strong>Strong performers (6.25–6.74):</strong> +0.15 — push toward the top tier</li>
-      <li><strong>Near average (5.85–6.24):</strong> +0.20 to +0.25 — scheduling efficiency focus, especially where labor % exceeds 21%</li>
-      <li><strong>Below average (5.25–5.84):</strong> +0.30 to +0.35 — scheduling discipline required, reduce hours over need</li>
-      <li><strong>Significantly below average (&lt;5.25):</strong> +0.40 — priority intervention, high labor % and over-scheduling driving results</li>
+      <li><strong>Top performers (TPPH ≥ 6.75):</strong> +0.10 — maintain, protect</li>
+      <li><strong>Strong performers (6.25–6.74):</strong> +0.15 — push toward top tier</li>
+      <li><strong>Near average (5.85–6.24):</strong> +0.20 to +0.25 — scheduling efficiency</li>
+      <li><strong>Below average (5.25–5.84):</strong> +0.30 to +0.35 — scheduling discipline</li>
+      <li><strong>Significantly below (&lt;5.25):</strong> +0.45 — priority intervention</li>
+      <li><strong>Understaffed locations:</strong> Goal reduced below April actual — adding staff will temporarily lower TPPH before it rebounds</li>
     </ul>
-    <p style="margin-top:12px;"><strong>Important note on understaffing:</strong> Locations running short on hours are not automatically performing well. 24343 N. Veterans leads the portfolio in TPPH at 6.95 but is 668 hours understaffed — <strong>their May goal is reduced to 6.65</strong>, below their April actual — a significant service risk that must be addressed in May. 33945 Lafayette is similarly understaffed at -183 hours — <strong>their goal is also reduced to 5.99</strong>, below April actual. Adding proper staffing will temporarily reduce TPPH before it rebounds. Short hours can mask crew gaps that hurt OEPE, guest experience, and ultimately sales.</p>
-    <p style="margin-top:8px;"><strong>Key lever for all locations:</strong> The portfolio ran 2,979 overtime hours in April. Every hour of OT reduced is a direct TPPH improvement. Locations with the highest OT (02066 at 252 hrs, 02435 at 222 hrs, 05031 at 184 hrs) should make OT reduction their primary May focus.</p>
+    <p style="margin-top:10px;"><strong>Key lever:</strong> The portfolio ran 2,979 overtime hours in April. Every hour of OT reduced is a direct TPPH improvement. Locations with the highest OT (02066 at 252 hrs, 02435 at 222 hrs) should make OT reduction their primary May focus.</p>
   </div>
 
+  <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:28px;">
+    <img src="data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCAC6AUoDASIAAhEBAxEB/8QAHAAAAgIDAQEAAAAAAAAAAAAABAUCAwEGBwgA/8QAVRAAAgEDAgMGAQcIBQkECAcAAQIDAAQRBSEGEjEHEyJBUWFxCBQVgZGx0iMyM0JSocHRFmJykrIkJSZDVXWCovA0VGXhJzdFU1ajs8KDhZOUlaS0/8QAHAEAAgIDAQEAAAAAAAAAAAAAAgMBBAAFBgcI/8QANhEAAQMCBAQDBwUAAQUAAAAAAQACAwQRBRIhMQYTQVFhcZEUIlKBsdHwBxUyocHxI0JisuH/2gAMAwEAAhEDEQA/AONntJ7RyR/6QeLMY/2zcfjrLdpHaT+cvH/FmB/4xcfjrWBGwAwM771ccMOQjGfWu0FOzstSXnutnh7Se0Rxvx9xWD/vi4/HVi9o3aKfEOP+KiP98T/jrW47YMuAd8VOOEd3jBGelMFOz4QgMh7rZh2i9oSsA3H3FRDdP873H46vbtE7QQcf074pIPmNXn2/5q1dbcsR6euaJityqFSfPamimZ8I9EBkPdPm4/7QywKce8VYA3H0vP8Ajq2PtC7QUUF+OuKTnz+lp/xVraQMLgDxFSPSiTCMbZBz50Qp4/hHohMru62KPj7tAZuf+nfE4zsB9LT4/wAVfT8f9oKNgcc8Ubj/AGtP+Kk8SARAsB/KoSQKcOMn+NEKeP4R6Iea7unsPH/aA/Xjjijf01afH+Kr0474+Cn/AE54mJ99Vn/FSFLWVF5w3KParI4gsJ5gAQckk0Xs8fwj0QmV3dOk474/YsDxxxOrHy+lZ/xVmbj3j5AMcbcT9Ov0rP7f1qVwREyZC5GM1a0AIKjl96n2eP4R6KOa7umMfHPaBIDjjniUkeQ1Wf8AFVo464+5MtxrxMAOp+lJ8/4qSwx8sT924z1O2aIhikdyO78JHn61gp4/hHooMru6ZHjnjtQzf004k51GATqs+w/vVmLjrjxYeduNOJifLOqz/ipZLasFHm7dPSpC1AHh6bZJO1T7PH8I9FHNd3TmPjfjt05jxlxKP/zWb8VRHGnHgjdjxvxKQD/tSfI/5qVCFI5ApOQatMQ2dTlffpU+zx/CPRRzX90xPHXHQjH+mvEY9f8AOc34qx/T7jhiP9M+JAPP/Oc/4qAlthLkA426CofNmQjCCs9nj+EeigTO7pl/TXjsggcb8S5z/tSf8dRTjfj7myONOJSF9dUn3/5qBSFA5bAOOtfSoSFAGPXas9nj+EeiznO7pmeOOOQM/wBNOJM9cfSs/wCKq/6dceM55eNOJMeX+dJ/xUqkt2kyQOX4VM24ijQk4J96w08fwj0UiZ3dMRx1x3/8a8SHff8AzpN+Kq3434+L+HjfiXOOn0rPj/FS6K3XmZi3Xyx0q0xjmICkHl2qPZ4/hHos5zu6ul484+Q4PG/EoP8AvWf8VQHHnHrDm/pxxOu3T6Wn6/3qXT2n5Mtkneh1jDMGZccuSBUezR/CPRGJXd05XjztAIP+m/E2PX6Wn/FVTcd8eujo3HPE2Oh/zrOcj+9SgpI8hwMDH2VBbcopfmyc9MVHs0fwj0Rcx3dMH4/7RS2E464o5fX6Wn/HUW7QO0XnCjjrijA6n6Wn/FS9YcjIXxDO/lUZlVIgxBLGh9mj+EeiLmu7pu3aD2gDwnjricE/+Lz/AI6ok7Qu0GIAHjzikn/e8/46TShSO8wScb5qAtzLkY29TUezR/CPRSJHd03btD7RuXmPHfFGD0A1ef8AHQ79ofaMrg/084q5sY31efYf36VohTmjCB8dDWJYwy8pHK2M7eVAaZnYIhKe6ZN2idpIBJ4/4qA/3xcfjql+0rtHDDPH/FmD6axcfjpO8Ky/rjAqiWMK2G+qlGmZ2CYJD3T6XtJ7Rf1e0Di0H/fNx+OojtH7Rsf+sPi3/wDmbj8da3JDhs5IB9ax3TehpZgZf+IRB57q8HEYYHpU4Fz+k8+lEQxqy4Yb59KsaEqRttVtrUklYiTc4OPLIouKGM4DDJHvispDg+E5z5Cpd02N18VODbJZN1bb24L4UbYoia3blXC/u6VnTxyIQSM+QzTEI4XLKNxtiiGiWTqvtL0LUNUsb+8sLIzQadEJbtgwHdoc74O56HpV8/CuvJaaVcPp0iQ6s/JYNkflSSMY326jritv7CsTcY3+hu35HWNMntWHvy5H3Guww2tjqV5ZaRhMcF3kDy7j9GLQkH++P3V5/jnFNVh1a+DKC0DN1/iRbvvnsPL1W3pKCOeIPvrt8/8Aheer7g7X9L0u8vL+yKW1ncC1uX7xTyykA8ux/rCjtP4E4lmSBotLMgmtPnkSiROZ4dvEBnJ6jbrvW86Dqukap2O8R6rxSl9JaXXETTOLMqJAzBCAObbAzR/GuuQ8O652faxpSXBsYtOUCOVhztAxUFWxtnB+2lM4mxJzuQ1gz3cNjlOVodbfe/8ASl1FABnJNtPPU2XLfoXUfoNNdNry6a03cJMWAy/oBnJ8/KlckIY4AznY10ztvmitOIrLhWwjNvp2mRd6qA7NJL4yx+395rSVhUtnIz7V2OCV0tfSCokFs2oH/j0v421K1lXE2GXI03t9eqjounXF/OlnZQ9/OwblXmA2AyevtQ0gQKc7Emtn7Og68dWy4yO5mxj+wap4GsFZNWvNUteWSzhDwpdW7Mm5ILFMZbH8a0mJcTGiqZWPFw0NIA3JcSP8C3tDgYqoWPadSTftYAH7rWofm5YEtjB2o61ia6u4LGzCvcTyBI1zgEmtu0bTdMm1We+s7OwbTJ7iGBhPaSMwkYDmWNT+aDnOT0ozStMs9J1CxNnpsdy82szRGV1LNAiMQuD5bDNaSo45Ia4MYc1tL97X18ltoeFQXDM4Wvr+eK0J0FtcvFdDlmicowDdCDg/GrVeHuiBgE1ud7ZaFb2Xzi+ihdb24uu/kNu8koYMQoRlB5MbH3oWQ6Dpl7oNveaTEYZbGO6nmCF25irAZUdVzufXb0qYuNXubblknXbrbe3p9FknCzAScwstZjsZZ9Pn1OONTb2zKkrZAILdNqsis5DYteiMm2VxGz8w/OO/StukSXRtF1uS5stOnElxayIkcZELq2wbl8vh61bf6LpUV5cItjEF+mraML5BXVSyj2yTQM44lDjdulxbrpZtxuNfe3/pBJwrHYWdrbXz1sfLTZac8UWCy9Wqtz4Qh+3FbFxHBb/RNzMmnR2Mlpqz2kXIpHexYJyc9fjSKNCWBxtnFdtgWMNxSEyBtrGy5TFsNOHyhhN+qF7ho1Y+R6704g4P4nutOhvrTSjLbzJ3qlZl5nXHULnNB3gItm6gjyrp3D/zRLLhO6UTSaxb6JPLZQcwWObwqGU+ed9q208jmAWWnc8gaLkQnR05OXl6g+oquUrKQCPhW/wW/D9twfY3mqW8BOrQ3M9zKLSSSYTZPKEdQQgU9QcVdHoFt/RW50/WoNOhvLWO1cy21uyPCJGAJaU7OSDuBsKwVDeoU57LRtJ0651a++YWCK05RpMFsDCjJ61RGvPFn0HnXSNInW27VZNEi0G0srSwgnWCVYCsky90Pzn/AFs9a1jit7abQ+GdWhsLWylvreYTR26cqHkcBdvXB61DZszrW0P/ANWB5utXA3Ph2rHzaS5mgtreDmmnkEca9Mk9KLKnAyCM+lF6EgHFWjjJ3vYgP7wqw7QEq1TtD5WtPUpdrPDOtaRALjUrRIIy4jyJlY5wT0B9qUkRAgBgR710RLPQdQ7T722NhM7L86a5E7hkdgNio8t80Jo/0FNwza6vqGm2UMeoyzpcRxWjyNGEHKixlQeQ7BiT1yarie38gt8cLY9xyOsNd/C3gO4Wgu4RsKFH3V86QqCzcproTaVp8Fm2njR7eW3Th034vXiJdpmH7Xt5DyrN/oWmNfa0jWMVvbDTrRope7wqM5AZlPTPWs57eyz9od3/ADX7LmUjI5IXlC+lYhWNQcnOfeuqXekcPNxfZ6QdPteaC97pEjtHUND3THEjkYdsgHOfWq9F0zRtZTRb240mzicG9X5vAnIs/c/mKw/WP31gnHZF+0HYOH5b7rlckaFvCcD2O1A3aKpyuSwP7q6Pwvaw8Xyahp1zpFlYXqTQXEYhg7rEQcLKuPTl3rUuJJLG44i1Cawt44rPvmWBIxgcgOAQPfGanMHGyoz0nKYJL3BSLu0ZRnIJ6iqu6DtyHBxRKhpJCQAD5CpBGU+LIqC1VAbJTcRmOYjPh8iajge9X3yKZB4jjrihuWT+tSCNUwFHxEMRny8qYpCrKWZfLYetBxQufEwUD0FH24V+nMOXbrT2hKcV9DGSoZV6eYq5ATIRJvk9cUTbAd1yg5J6+1XxR94e7K4IGxxTAEouVccGF8AXceVEwv3fhcEVdBEyKCVqxskhBHkHp7VICWSoaBNqGmavHqemXTW95ESY5FAJGQR57dCaaW2v8TWd1ql1Dqcqz6qvLevhcyg567bdT0x1quws3nube1t1JnnkWKMDzZiAPvr1rpPC2gWGlWtl9EafKYIVjLyWyMzEDckkZJJ3rheLsYoMKcwzwh7n6dNgb636X28dVtcOp5qm4Y6wC8g29zqkegS6Ctyw02WYTvBgYLgABs9fIUbdT6pqUdnHe3Us8dlEIbYNjEaDoBXrY6HoeeUaLpn/AO0j/lXnvtO16w1bi65sNJtLS206w/Ih4IVXvX/WbYdM7D4VruHOJafGKvkxU1rXJdpp0vtudk6uoZKWLO6S/Sy1TVrjUdV1R9S1S4e5uZAoeRgASFGANtumKpjQ5BDD6vSjRiTljyuPUVCaLlkAXz8z0r0iCFkLAxgsB0C0L5C43JQyNcQTC8srmS3uEyA6HDLnrvX3z3XpL2O9bVbx7iIFVkMhJAPUfCijZtkHJOevoKst8LKYnXetfWYVS1BzyMBPcgbLYUmIzw+6xxsly6hxDE80keqXqtOwaUiQ5cjoajaahrlu8og1W7i72TvZMSEcz9SfjXROCtLUH6Uuo8EjFuMdB5t/Kthuu5cEPGj/ANpQfvryHGeJMMoax1PHTh4boToNR02Oy9Lw3C66qp2yvlLSen4Vx63uNZgSaK3v7tI7hi0qq5wxPU/E0VFLqUc8Nwl5Os8EYiicNuqDovw67VuPFF7o2kWInudPtpJZDywQrGA0jfV0A8zWuac7TW5lljVWY55V6D2FdPw0+lxxjpG02Udzax7rR486owpzWOmzHsL3CEk+krlZ1ub64cTsrSczZ5ivTPwqEV9qdvq9vd3V3c3UCXMdxNGW/SFMY+vAxTBrjmY4TYHxCrjAgIbkwOldW7h2kc3IYxby/PD0XLnHqgG4cUu1O61LWtQluriS4a3755IIZGyIwxyB9m1WRwtzKAhxjJpjdKoiwNts7daXyCdXUo7ED84eePKtph+HxUUQiiFgFq6yukq5C+Q3JUZ7ZpVIyTv0HlQ99LrET2lxHqNyj2KlLVhIQYVPUL6DFHWpnMywQq8lxLsoXcnzrbtE0KGDkn1Lu7m4ABCdY4z/ABP7qvXtuLrV1NXHTi7j8lyr6e4jt7e5soNWvkguGZpY1kIDFvzjjyz51NtX4kvNO+Y3GqX0lr3Yi7ppCVKjoMV2nUrLS9RGdQ0+1uTjHM8Y5v7w3/fWtarwnoscb3VteS6ZEgy5lcPEo+vcfaaNr2dWqnFikTyARYrSY9W4pc2/NrV8Vt1KxZlJ5QRgj7NqtiW6ksre3nmklitlZbdGOVjB3OB7kCjoEt5Of5tKtxGGIEiAgN7jO9TC78i7EA4+uhcGnYWW1aUuCF28QKsnUGqpElMyz28jJNEwZHXqGHQj66MuI442TmDAjqxPWpKqNcGQ9R0z0qSE1ry03CWpHqUN/JfpdTpdSc3PIGwzc3XJ96Fgl1nTLeW10+9uraCU+NI3IBp45fJzktnrjbFVXtwqW7Ny7AdTQ5AeitxVkjToUr0biHUNKtLzT7ya6urSWykt4ITJ4YmbHiwfKlB1LXriy+YTardvarF3QhMp5Svpiu38DaTHZ8N26X9pbtczEzSCSJWK83RTkeQA/fT9LDSyMnS9PO3nax/yqk6ZgcbNXXx4XVSxNJktpt/i89HU+InFvnWL3ltd4cynwHGMj3wSKBefVI1gEV/cp82kaWHlkI7tz1I9Ca7T2qnSdN4XCx6fYxXN1OscTJAisAPExBA9Bj665S4z+aB6nFWYcsjb2WlxHm0UvLc+5sp6LxNLp8OoX93HeXmuXULW8V1JN4I4yAOnUkYNazbR8jIDuB0HrT2W1Eo2O1D3Fo2ObbwgnA9KMRhp0WvlrHzABx2SuSHmkYhSMUPPFv4nOR03prDC0gDBsY9fOhry1XqSARvkVDglByTzrv8Amj+dVd237H76PmBQYyG9yKo53/ZxSS3VNBWYizDlyRnyo+zXu2xgqCNj61Raw4AY+I48qMAZkC488YzRNCBxRcahnUK3Q5OPOmEMLDmIYA42J9aEt1iXlLP4sYIo1SZDhGwMZGetMASHFWWLFAEkGdtjVkquSXhUPjbb1q2wjTkDuMjbr5UaqiPCooVfUCp2SyU87FrY3vadpK3CZ7gvPgjzVCVP24r1CXPrXnPsRUR9pltIx/OtplUf8Of4V6EL+dfPf6oVDv3drOgYP7JXacPMBpifH7LXO1XXH0DgPVL+GTkuTF3Nuc79455QfqBJ+qvMNpA0UKktzMRk75JPrXaflIzt9CaNbBiEkvGdh68qHH+KuT2QUsD5+h8q7f8AS+iYzDTU/wDc8n0Gn3Wn4imJqBH0AWIy0aj8m3N7VZyySsq4PwI600WOLGQqgn3qi4IiXmAx6YG9eoA3XOZlW8cgdVIPh6eVWWunC8vYoVYoZDiQ+YUbk/ZRNsRJGA5JbrTDQcLdXEvJgxoEGffc/dXM8V4m7DcLmnbuBYeZ0H9ldDw1QCuxCKI7E6+Q1K2E3AjjWNQFVQAoHkB0oG/1CK0tpbq4flhiXmY+voB7npVckuTWvcRs97ew6ao/JRASze7H80fUN/rr5xwLCpMYr2U/c3J8Op/Oq92xWrjwuidORtoB49EomivNXun1fUFwG2ijztGvkoo6ySSNSRGeXbBo9VC8kQUkAYxjpRsNuSRzRLg7gHyr6jw+iioYGxRCzQLL53xGukq5XSPNyUujtMp3iDfzGKnHCWXDbgHI386Zd2YRzEYJqhYi0hVAdzknHSr+ZaslUTwjPNtuB5UIB38iRWwBlGwB2+2mN4FjDc49MAUPAq2nMQMTSD8ofQfs/wA6ZDGZTYKrV1QpmX6nZM9Mt4NPVu6bvJ3/AEkpG59h6L99HC5P7VIluvIHel2p65KsrWOlcst50kk2KQ/zb7quPibG3Vc02Oarl7kp3xHxRZ6LFyS809265itoz4m9Cf2R71o99LrPEVys+qyFYAcx2ybRp9Xmfc0z03RORjNcEzXMhy8khyxPxpp8zZUx5+VVSRddFSUcdMLjV3f7JdZKlnGsQBFEry83OAM9M1g27gsSVJXzrEsSDCrkHl3xvmhICvglYa2Z/HIOcA55fUVERxOnKEKYOMHyqSi47s8rgcvQVmGScTlI4zLMx2Cjy/h8aHZNYxzyGtFysXnLFCvdBTgYPpTHhvRjcTpqOpx8sSENDAw/PPkzD06YHn8KstbWKCQXE4SWUbqvVE/mf3UfHdl9ycmq0jyRZq7XCOHywiapGvQff7J8LnLEk1aLxERpHkWONFLMzNgKB1JPpWvy3sUNu800qxRIMu7nCqPjWj63r9xxE5srNnh0wY52bZp/j6L7fbVdsRcbBdBX4hFQx5nnXoFTxnrTcU6136lhYWwMdsB1YZ3f6z+4ClxgjCBELZxuSOtGx2aBQETAB2xX047hsMoJG21bBjQ0WC81qql9RKZH7lANZyRjnRiRjpmo8pkUq4B2olmLITk4Hl9lUMGRR91TZKBS64Re95V222INCS2pYH8qetMXT/KQ7AAjrQt4yklUz770JCY0lK5hEmV8THzqju188/ZRFygbHL9e1Vm3GdnalkJwKxZcxLkDPxpjDAWb9kbYNLreTEhA2x5Uyi7xyAzAj4VDULlfbwKHZicjmzn4UwtY2WXnDDl9KHiMa5DnB8vjTLT0D7tsANt6YEhxVkD8+UVQpQ0VCMkrzg4/fVRhIlIj5TnrvVj2694oKvzEfnUVgUolPeCNQTR+NtHvpTyxC4Echz0VwUJPw5s/VXpevJl0hMJXByBsT1zXo/sv18cTcIWl8+BcxjuLpc9JFGCfrGG+uvEP1Ywd5dDXNGn8T9R/q63hqqFnQnzH+rUflF2zvw9pV4qkrBelHI8g6Hf7VFcpt0AQPuT0r0nxvof0/wAJ6hpSqplmizCT5SKQy/vA+2vPccXLH3MiGKRCVdTsVYHcH3zW9/SuvZJhrqU/yYT6HUf3dUeJYS2oEg2I+inFGrxgjc9dhUcK7Dm8RB2wKIjBKd2DyD9Y48qItraNFyuGz02r1O9lzF0LG6q/KBy9fEfOi+HlL/PCDzHvVyfqr5rcO4DIQOhPtRfCyL88v7cDA8Dge24/lXn/AOozS/BJMvdv/sF2/AkgZijCfH6FXGElh8a13T5S8090+5nkZgfQZ2H2VuzW2BmtZtbJBpsT9MDcevrXEfpZAx1TPI7cAAfO/wBguy/UOreaaJjdiSfop2caA94d8+VHMrvhxzDB+2qNPiR3IBOMZWncFthAWOSAN8Yr3B7gF4ubkpRdpM6gMpAIwSd9zV0cMiRghsYXy6Gjrg4Xl5cj2HSls91+SYsd06ipBJCAmyFEXf3Ty8pCRbD3f/y/lUJ7bCn1p7b2JitI43HjA5n/ALR3P8vqpHxXdnT7VY7f/tlxlYf6vq31ffV+nkDG6LlamSSrqcrfILW9be45ms7E4fOJZQf0YP6o9/fyq7SrCCxt1IjYHz96N0PTu6hQyHL9WBOSTTtbdJWUSKPD7bUqWYudcroqeFkLMjfXuhbNDKO8IYKD+sMVN5Ink5IvEQMkjOBREj/6lF8AOCaqeWKFmgiVcN6Um91YCVXaGOYsc4bc4FVGNeTvmbAHlnqKMe3lvLhY4VMzncIv/Wwp9pmgxWwE1zyzTbYXHgT+Z96h8rWDVbfDcJnrnWYLDqei1my0y8vJfnEnNawH1Hicew9Pc06S2jgiMcEYRTu3q3xPnTiSLxZbOTWv8Ra9pmkloZZe+ufK3i8Tk+/kv11WMjnld/SYdSYZHnJF+riozgg4x9QpBq3EFjp790rG6uR/qITnH9pug++gL691rWHKZ+ZWzbd1EfEw/rN1+zFRstEhtYscoVg2x6inMivutPiHE7G3ZTC57n/B90HM2o646TahMBEpJjt02RPfHmfc0wS05cKgC+tHwQJHEPED+/ao93ztzFeYeRAIp4AbsuNmqZJ3l8huVWqtGSG5dhnI3xQ79+WzzBhjbaiZI+WUsGKq+M753qgCYA+BjgbkedRZLBQhgwHZiQD1HpVDY3PKDyjOPOinYlwgG58jQty7kYUcudiQKxMCBnjFxMCu3t7UJdwor4XOBsfc0Y8ZQYUMrnz9aFmDt4QQW/WIrEYKW3Cr0UjOKEYuGI5h19DRbgQylWyTjzqrmbyVSKWU4FVR90JASTmmls0feg429qCiCEEtjemFtEvckjB22xUAKHIqGBi+WA3Oc5oyEGEb5KnIoeylyh5xt5E0W6E8qoCxY5PtR3SXJhYR93v+dmj0I5gGIz196X2kkhcI48S4AIo3kR2HOQWqbJJUZYmkfKLnGae9nHEsnB3Eonm5m0y8xHdov6u+0gHqM/ZmlaLyqWXI6b461GXlmTkOAxHn0AqjiOHw4jTPpphdrhb88kynqH08gkYdQvV1q8NzBHcQSpLDIodHQ5VgehB865N2x8FzW91JxRpMJaF97+Jeqn/3gHp6/b61q/Zf2gXPCEv0Zq3e3OhO2UYbvak+YHUr/V8uo9D6I067stRsY7qzniuraZcpIhDKwNeFihr+DsTEjdW9D0c3sex+h1XYmWHFafKd/oV5jt4xLGGBBGM596kkbCRVBYV0/jrs3eOSXU+GYwQ2Xlss4365jJ/w/Z6VoPDml6jrM+pG3t2EmnQ95NHIhDdfzceTYBP1V7Hh/ElBWU3tDXgAWuDuCdNfn12XIVGHVEMnLLb9vFCsGUA5O9Y06QWut21yW5Y5fyMmem/TP14o6/gdLRJ13QjOfTaglhiu7doXbqP31YxSijxGjfC7ZwITcMrH0VSyUbggrcGhOenSkCWZi+cWp/1bkj+ydx+6m/CupC9tWtrjw3dthZAerjyb6/vqeuQOGFzbJzSY5GUeYPn9VeF8LVp4dxh9PV+6D7p8xsfI/wCr1rHIf3nD2vg1O4/0JNZQ9yeYAHO1Hd8XYBdseXpVcFsfnht8/wCrDhvXc5rM6m3wAAd9691oK+DEIWzwG7XbLyCvoZqKYwyixCIkjxEWIOwzSKS2S41a2hQfpZVVx7Zyf3ZppPLJPZyKhHOQcU04V0zTtTis9bSF4LyDmjmRH8HeBSpJXpvnIx61aMnKBJWrqH5W3Vk1sTkkbdSa54gTW9Yn1Dm5osmOAHoEBwPt6/XXXNRsBNZzWzF0WaMoWQ4YAjGR71zS/g0/S9QTRNAhYrbf9qnkYsebGyAnbbzx8PKjgnzaLV0EQY86ar4WxiAA3J2GPKjRbOEBLEbUbaW/LD3vLlyMnNUysWBAyuBlvam57rcNGqVzyiASEHA8/QUPpNldazeGK0XAU5klYeFB6n39vOn11wt9JaLZFbj5tcH8o7EZDKxzgj1Axitq0mxtNMsEs7VOWNRuT+cx8yT5mlSVTWt9zdddh/DMr5Gun/hYHTrfp90Dpmj22mW5itwSzfpJG/Oc+/8AKg9f1LT9FtPnOoXCwoThF6s59FHUml3HPG8GkznStMRbvVCBkH9HDnzY+Z9vtrQWtbm+vH1DVrmS5u23y/QeyjoB7Ckwwvk95y3uIYzT4azkwAEjp0ClrfFur6zM1tYRvplmSRz/AOtce5/V+r7arsNFtoE52GXIyWPUn40xs7SJkGU5X3+qi54TDGCGycdK2DWNZoFwtZiM9W7NI66ohtBGvMo5h061ZOqlVJ2G2QastcvHzMTjG+KxLGREjqAVzgg1hOqp3VEi26Rlyu/VSR19qF70PuxwB0A6mr55WjIjkhAz0IOfeqpkjcDJ8tqxSFUzQk+IBlznOaoa4LLyxeI5xvttRBg/WIX7NqpdTJjCgN5Y2qCQjCFnt1MOAQJfJhQcrAYHL0G9HOjKXyScDPSgm5CSDj3NYNUwIW/A2KHcUH4VTIOBjeiZ2ZscuRQkijkBYCpsjCX3cbO7EEfzpaY5ASBzYG3WjLp3Ep5Mn2oUiQknnoSnBTjiYjodv300tAVATJG21LYJSqeIcw/63o20kMkxJ8PoKBqlyYQhe7CNgcrZxTSEDlwhFLoFiEqrz8x88UzTAXlQ4IHU0xIcjIIuhB36H99EIjMylG3+FBpyhRhmU43zvV9pz8oToM9axJKLIldVGRzbZxtmpmBTjAPNy9aiGEZWFWxzeXnV/fLboCVJ9Ky/ZBZTW1UhkKZU+XvR3DPEGv8ABl20+izCS1duaeylyYpPcfsn3H76WxXWFJ7w7klqxcXQcEBsmq1XRw1cZinaHNPQpkUr4nZmGxXors843tOMrCWaHT72ymgIWVJozyZP7L9G+/2rZo4oUmkmSKNZJAA7hQC2OmT54zXl2w434701Ei0/XmFvF4VilgjdQPT83NbFp3bFxtDH/lmm6Nd48wkkbH7GI/dXjOJ8A4m2ZzqVoyHYZtbfMBdZBjNOWgSHXyW3cfaEmk3rOiAadeuSmOkUh3K/A7kfZWhS6e8V63IdgM9af3na9catpc1jqfCCywzLyv3V5gjzBGV6jrWqWGqsykyBsjybqB7+9eh8LfuTKXkV0dnN0vcG4+R37rQYmIDJzITcH+kVpuoQ6bfm41DT5FfdRcxkthT6r/Ktptr62vYe9tZ454z5o2cfH0+uk8VzbXMXQenSg7nRYTN860+d7S4wfHE2M+x9a5jiXgFmJTOqYZC1573I+4+ngutwLi/2SMQysBaO2hT6RkiuIZycBX5G+Df+YH20ZdW0bBtubbIrSp7/AFizhaG/jju43BUTKORh8cbH16Ctk0XUDc2CNI35RRhh71f4Nw7EMLpXU1W3Rp90g3BB18977qjxXWUeITNnpzqRqLaghDwuiTAZ6etF8KagujcS91cNix1AhGPkkv6re2en2elU30aLcK4G2PKhZIo7v/JJP1uhz9ldxI0SMXFZdbFb5x7qi6No5aAA3twe6tl9G82PsBv9lc+0iwW1hCuTJKx5nZtyxPmfrptcRXt9fx3WqS981vAIo8+QHU/Enc0PaMJdRyD4VFJpWcthUcvLt1RrIIbRnY4GKRXwkZI4QfytzIsS4/rNj+NNNeu1SFLVCOZ/EfhSK6v2067tL57c3fzdi6xB+XLYPLv7HBqyy+W6s07Wc1oebC4uujSoD4UGyjAHoBWr67xno2mO1uspvrobdxbEMR/aboPv9q0nVtS4l4leRbu6+aWT7G1tyVUj+serfXt7VLTNNtLGIR8qggbbUtlKR/Mrs63ilrRlpm/M/ZZ1fV9f1xjz2traWedkCB3+tj5/ACrba0DKGkycDberJZ1MeFGAOlRa7AXA2PrVtrcosAuPqqyarfnlNyoiMs3NygEHY1B4pTIJGOVUelVm9WNt+pqm41AleQHY9cGmaqrYq6C4EZKcnhz1WiTcI0HLGpY5OAdqXxXChScgHpmqGuzG2Q2xPrWEAlFlKInkdbhWkIwfIeVSnVJAuAAQc7edCPco+SQfcj0qI70HKMGUdM1BCIBfXUzpKse5THXG9VrLIibjIGc+Rr6QyvMXC4A2xjpVckiyymMdB7YNZbRGFTPclnZTGVBwAT0oGZm7/wAI29aYTYc4Ug0veNwHVSABvk+tYEYQ8gbAYeZ642pfK/PL4iML5jzoxmkI7t/zTtkig7iJhIFXbO+fSpTAhblVXLjIB6e1K2h3OAcfXTKZHXI5gR1ofK/sUsprVTZuUVX68wyQaYwyR8yM/wCcegFA2SAgc4GMbHzoyKNXmJyQEIx8aBpUuTGNA2GUchHlmmEQxAJFPOd8k9aXRyN3oUkYI8vOjd3iESkfyFMBSXBMLYtJGpUDb18qPgWNoz4vEBsQOhpREVht1CtjfJouSYrbfk2BY+YG9TulEK9dpAWlcye/p/Crzdd2cOdqXRuRl33bGaBu5nyWdsYGcVhCgNun1lbz6hqUOmaZbtc3dy/LDEnVj/L+Vde0PsBvp7VbjWuIVtLhxkwW0HeBP+IkZPwFLfkfaWl7f63xJcRKxtwlnbswyVJ8Tkehxyj6zWz/ACq+1PWOzjhzTE4eEK6lqU7KJpUDiKNACxCnYkkgb+9cxiGKTifkwG1uq3NLRR8vmSC6Q8U9iPEGm2b3Gg6rFq3KpLW8kfdSf8JyQT9lc54R0HX+J7q9sdJsO+u7Le4hZ1jdNyNwxHmK7P8AJW7VNV7SeHNTj18QfSmmTIryRJyCWNweVio2ByrA49qzxSsHCHylOGtXjKw2vFVpNYXKgYBnTlKN8TlRSYcYqWZo32LhsUcmHQus9ugXIdc0fXuE7i2j1/TXs+/BMfO6sHAxnoT6ioS2uq3umHUIdF1CSz5WcXMdq5jAXOTzAYwMHNdG+WwHteD9E1hAcQXzQOR5B0JH70rqPZPpS2nZNoOl3UY/KaahmQjzkXmYH+8aecbLYWyFozE6pX7YDIWg6LyrpmozKMR80rE7qq5yB7Cm0etuuEMcqk5xzKQab/JVsLk9suu2synk0SCaFyenOZAgH2BvsrpnFPEEdz8p/hLhdOQxWmnXNxMuNi8kb4z8Ag+2n1GLgSFobewvulx4dduYm2tlyM6pFMndzY5SNgaBtNWXTr7kaTMTHBIPl616C7feEl13gK5udOgVdR00G6g5FALgDxpt1yuce4Fa78lWLTdd7Mpby7sLS6cajKgaWFWOAqbZI96W3GI+QZMvW1rqThruZkv81zqfVYXiOZBt0OeopUdZSK/jZZB4WGd66h2DR6ZrHHnaFZ3en2lxHZagqRpLCrBBzzDABG3QfZW2cZ8R9j/COrrpnEkGiWN60QlEbaXz5QkgHKoR5GpOMCN/Lawn/hAMLzNzF1lyHUuIYfmTPzjxLjrS/TNYt4rcySSgFtz8K3C11jgzif5QPDtrw3Dp93o8lhIJY0tOSMyBJTujKMn83fHpXS+PdY7NOBIbKTiax0yxivZDHCw00SAkAZzyqcDcdaF+LCKzOWbnVYzDc93ZtAvN0usrc35m7zOW8IzU72+hluFDvkKN967z2i9mPC3E3DEuq8O2dnZ6iLcz2dxZgJHNtzAMF8JDeuM1rPyYOCtNu+F14y1i1ju7y6lkS2WZQywojFSQDtzFlO/ttTv3yHlGS2o0so/a38wNvp3XLPpJIULJC4X9rkOPtpcdRNzMSpZ2O+EGdq9Cap26dmmncSXXDt5PcK9rM1vNKLQtCrqcMNtyAc7gVzjsP1604h+Uvrt7ZJEtlLbXBt1jUBeRXRVIA9QM/XQx4w/I57o7WF99/wCkbsOZmADrrQrm9eGNe9iljB2UuhAP20xstJ4j1C0jmseHtVuYJQDHJFaOysPUEDBrfPlvXfzTTOFuU45prn/DHXV+weXvex7heQ/rWCH95oJMbc2BsobqTsiZhjTIWE7LzBoOh8QcR6hdWGj6XLdXVptPGGCmPfG/MR5gio8TcMcS8NXlhba3p3zOXUH5LcPKp5jkDyJxuRXQPkqXnzjtg7QYyf0crj/+w9X/ACwrs23FvAODu123/wBSOpOMSe0cuwtb/FIw9nKzdUssOw/tBn/TNpVqD5yXRJH91TRzfJ94sWHvBrmkySgfo/ygB+vl/hXobX72TT+H9Q1CIK0ltaSTIGGxKoSM/ZXBfk59vutdoHGsnDPEGmWMTyW7z281qGXBTGVYEnOx6+1a4YxWvBc0iw8Fb9gp2mxG65nxHoercKam2ma7aG2nC8y78yOvqp8xSxbsZCqcA9AK9H/Kp0uC77LZ9WYAXGlzxSRt54d1jZfgeYH6hXlO1uSzKwboN66HDa01cWd2+xWrq6UQvsNltHzgBSF8qBkZFmBA3I39CKjE5dBk5361iduc8seMDzrYjRUwFXK4Xm5CCcdKDcuXLMxIJq1onhbnznmH/X/XtVTXGDhlBA2AFH0RgLEwXuic+LoPaltwZB+e2/rRVxJv0x8BQM45gVJ9+tRsjaELctIF5V3B6mhypzvy5/tGrpQy4CEEjaocsn7KmlkpoChbEjbpijo25WB6gnJpOrv8fWj7csTkYGOppYKJwTPvOYhUX2oy0ZRmLmG3Wl9tICuVIDY8zRVoN8k5PrTQkuCZxohwMcxzUp15FwNyahbc4bm6Z6VOZBI2DJsOo6UQKWVgv4Bg+XlSrUJwObGScUTIDGWI3A6+9LL1c+Lc5FQdkTRqvTnyQ5IouzK9dcc8msS82/pFFitA+XTILm+4UT9UJc/elMvkmayBp+u6CWw8cyXiDO5VhyMfqKp9oov5U/Bmt8XaFpeoaBbNe3emyuJLZPz3jcDdR5kFRt13rjJWBlcS7ut6114QAkfyEyLbUeLsdDFa/fLT35aGtPpL8A6xE2HstVkmBH9Xuz/CsfJP4S13hPRNaveILGSxuNRliWKGXAcRxhtyPLJfofStJ+XDrkF5qXDnD8ThpbWKa6mAP5veFVUfHwMfrpTmh9Vdv5ojBtFYr0D2zaHDx92atpcREgnuLSeNh+z3qFiP+AtW2Sa/p1nrFjoRkWO4ubeSS3T1SLkDAf3x9hrnPYJrraz2P8OXTyFpIrQW0h88xHk3+pRXL+1PjlbL5VHCNqs/Lb6ciWtwc7BrnIbPtytHVYQEks7XTOZ1XaezbhtOHe0HjzV1jCx6xewTRHHl3ZL/APOzVxHgTiMcTfLavdTifMERureI+RSKExgj48pP116A4j1ePR+H9T1SZ+WOytJbhifRELfwryB8k6SR+3WxupCS8kF27E+piY02KMua9/ghc4Cw8V7juNcsodVttKmlVbm7ikkhQ/rhOXmA/vj99a/2Y8OQ8G2ut6fahFs7rVpb22ReiJIqHlx5YYMB7AVxf5V3El9wxrPAnEWnse/sb24kwDjnXljDKfYgkfXXZ+HeIbTXdBsta06Qva3sKzRE9cEdD7jofhSDCWsB6FHzASuZ/JjuMdpfavn/AGtH/wDUuK2Ltc7GNJ7RuKItdvddvrGSO2W37uGJGUhSTnfz8VaZ8nGXuu0ntT676tH/AI7iqO33h7tK1vje2vOEX1EactkiP831AQr3nM2fDzDfBG9WQx3P0dl03+SUXDJYi613sk0mLhn5UUXD1vcSXEOnvcxrJIAGYC3Y5ONvOurfKa7Otd7S9O0O00O6sbc2U8jzNcuyjlZQBjAOelci7ItA4i4a7d9D/pPbyx313b3MweSdZWkHcyDJYE+Y866p27doOo8D3XCl/bTFbCfUSmoxhAxkhAGQMjIIyTtTqtjjO0sNzbf1QQlojIItqt1vNU0zsy7I4E1O+V00rTltkY7NcSKmFVR6sR0rk/yUu1bSIdATgnX7qOwvIp5JLKSVgscyyOXKZPRgzHY9Qa2H5RPDsPF3Z417aRrcXem/5ZbMm5ePHjA9QVw3/CK87aN2acTcV8KDXtCsYLuHvWi7sTBJMrjcBsAjfHXO1TTUkMsDnPdY3WSTPbIA0aL0P2z9hGjcXz3Wu8OzrpOuzMZJQd4Llj15h+qx/aH1iuU/JQsdS0Lt91DSNXtntr6z02eOaJv1SHj8+hHoR1rqvycbfj3R+FLvT+NjKEimUack8oklSPl8QJBPhzjAJ9fLFAWl3YTfK4vHs+QzxcMhLsr5y94hGffkKVXzPa10RNwjs0kPAsV03tJ4J4U4+gsoeJ7eSZLNnaAJO0eCwAbod+gp3wvYafw9oFlomlIY7GziEUCs5YhR03PWvMny5XabRuFGBORc3Q/5Yq652FzleyDhNMnbTYqQ6F3KBvp2TBIMxXMPkky8nbJ2ksf+8P8A/wCiSiPlmT8/FnZ4w/78w/8AmRUs+S8/ddrvaSQet0w/+fLV3yupe94i7PyOo1F/8cVPLP8Ar3/NkOb3LL0rruNQ0W/00SiI3VtJAHxnl5lK5x7Zrj/YL2H2nZrxDPxBda6dWv2hMEISDukiVscx6kknAHljeuj6heMkF08beJI5GX4hSRXiqXtr7UdXiNvNxLJAjbH5vBHE32quaGmppJQWsPmsklaPeK9DfKy45sk4XXgyxuo5b+8mSS6RTkxRIeYZ9CWC7egNec7YhYwXBIHXHlS2yEk0rXFxK800hLPJIxZmY9SSepptHgADJ6V1mH0gpo8oWoqZjK66PtpXdPCCF6ZNFW8yIh5tifeh0YugTAx7ViRfGQVBHWtkqaImJkCgtnzC0FJGMEKAG3G9SeVyf0SqvQYHSoyNlTuQRsN6hSEFKxRikmcj3oS4mZV5j19KLuNnEj4xjBNBTOrHIOakm6NoVDyeDP62OtCmU56H7axeZOcE9M4FDc0g2AekuNinNGinbyc3QZz60d33IpXlIJ6mlas6KCTRto/MSWIA9/OgaUTgmlpKmFQDxUYGKgYIyDvilcb4ZXQb56mj4S0gJxkj3prSkuCYwTtghjyjHSriTkGNub66FQBiGq3eNudRudzmmCyUQo3Mh5CmDnbcChLteaIYJBpgkeVDvnJ3qi6aPPLtUkLAbJdoesanwrrttrWkTd3cwHbP5si+asPMEV3Th/5QnCV1ZoNetL7S7sDxhI++iJ/qkb/UR9dcRntw6Achydt6Dl0pDu0at65UVrarDmVBud1ajqSwWXbOLflGcPWtm0XC9jdajeMMK9xH3UKe535j8MD41531y/v+IdXutZ1m5e6vbl+Z3P7gB5ADYCn0Gj2p3NtEfhkUZa2VmuA9gCPZyD/Gop8MZDqskq77BP8Asg7YG4A4Wm0GXQZdURrpp4nW57vkDKoK45T5jP11zvjTUrvijjHUuJWtpLeW8uO+VASxjAwFGcDOAB9lbvBb6ADyzafeKfVLhfuK0bHb8J4/9rRf/hxv/EUbcPha8vsblAa11rWTHjLtn1jizgi74aPDZtWu4UiluVnLEgFS3h5R1xjr51pXZlqep8FcWW/EFnpBvJYY5IxE5Kgh1K5yPjW3Qw8MAgJqt/EfRtPVvukprZJw5HudbOMdXsGH3E0bKKlYwsANj4FLfWyk3ASDtX4r1/tItdOhvOHksRZPIyd25YtzhRvn+zTLsy42484K4e+gLTQotRtFlaSE3BYGIN1UYPTOT8Sad27aAXAHENsM9AbSYfctPLU6GgU/0gsMe8M/4KF1JShgZlNvI/ZIdXVV7gBal2e6zx1oHEHEOqWHDVtcza5crcTJIzARkFzhcHp4z19BXQIeN+1OQDl4J07/APUf8VXaXqOjwyYh4g03n/szD7462Ky1VGGV4g00j4v+CqU0EF7iP1zKWV1T1/xc+1K47R73jfSuLpOFrWO60y2kgjhV25GDhgSfFnPiNKu08cc8dWNpa6tw3BapaSNIhgY5JYAb5J9K7daavAkZ73XdNP1t+Gl+parp5J5tc0wZ9S/8FpcTmB4PKGm26Y6pmLd/p91zHRuOe0XQOH7LSG4YsrqOzhEKyzO3O6rsM4OOmB9VKODu0DjHhHTW0yHg60ksBPLLFGjOjJzuXK5ycgE4G3QCuh6lLpcvjOv6YAfaU/clIdQbSGTlPEdgNvKGY/8A2VabS0r92b+BS/bqkdvz5pJr3bZxvLaPDpnC9vYTMuBM5aUp7gYAz8c1zvs+4r1zg7jS84quNPl1a+u4HimM7spYsysWJwd/DXQbuPRDkNxHb/8ADbTH/wC2l01rw/yvnWycZOVsnP3kU9tBSBpaGnXwKIV0+5C1jtj7QbztDsNMtrvQ1082MksilZS/PzhRjcDH5tbNwV27nhnhbS9BfhWS5Gn26w96L3k58eeOQ4+2ltxZcKsRI+qX74HRdPCg/bJQs9vwpjlT6UlJ6fko1H3mhfh1MWBgBsPNPFc8akITsq7S7Pg7i3iXXLvSLm4XWpTIscUqgxZkZ8Ekb/nY+qp9sfadpnG+qcNXVppl9appV0ZphNyksCyHC4PXwn0oO7tNDyQlldsPIvIo+5aXS2NiWwLLlB6ZfP8ACgOFRl2bqmNriei7kPlB8DTxTKbbWo2aNlAa2Q7lSPJ/evM2m2wUgjIOfOtkTTrPvMLZxg+u/wDOiks4QOXuEH/CKKmw9kBNuqySqLxayCsbcRoNyc/upjZITOQwAXyNQ+aorA94yj1xRRhKgojEgjY43rYZbKsXXRaqBshyR5+lDSyANyhubJwR9dXc8cMPICQ7DBJqjEJOckn2NShCnzqqlJCo22+FL5GPMTHISPMVdcIXPhLYA9aGkcIhVSDgelYiChNNmPx4x50ukcEnA29KKeQhQpXc0PJCHHNkj4UJNkxoQMjjOB16b1A5z0P2VK5lWI8u/wDOqDcnJ6fXmkuKcAUOriR8ZPtRcIPMMb8lBRELhc5Od6Mt2QNvjelNKNyZrIOUKo3Owo61CopyWJ6+lK45AJlfAOKIkuGUgYyDt7AU4FJITOznC+GRtvWiWn73wxdPbzpXFNENyRnFXwzKBzK/w3pjSlFqaRSEDlb0xQ8sJlkzg+gINVwShlLswBNEOzsFKnNMFkBBChHbzGTmDcwB6H0oiWMk+M8qmpRBxC77HPUE1fbZePMhH/lWXQlUxwcrEeVWMix8wPrtVzSLEwZgMH6sVlZI2QsQdqlBdDBFJ5m9fM1OWJFXw+JmOBiiUMbqsjAZPQV8oViMkr+0aK6hDxW4Xdjg5HWiQik8uNj19quaZFVgE5h/Zqy0lt1PdFcMay6ElYgtkTkbO5GaJhDcuMb1geQyOmMdKtWMmNsPtnc0N0KgrlMsD4zRcN3MvgDN08qqiVUIVpArMdj6ViESfOChOOU7nGxqb3QEJkLqV0CsxydqBmuJRNh2JAHQetXswyVXGcb4odmhEqjm5nPqOlQLKAFJmblDEnAoSUu7JtgK2SSPKjScKqAgmq54mSEMDnxYqbhSEJcRxOebHTGDmgrqBpFQRrkMwBGfLemPK5wGAGB0qEkwSHPL0PkKlG02QMsCu/IpG3p5VV82RAXGx+NGSRJKUmQspIwQfP3rCWscsYLsVx70CYHJd835mJ2Oai9oCoUgUfIRGByeIep61QPyrnmI9t6lSCgUgC74wR5CpNASMxj40XKgAJxjGwwDVT86gAutQiBQZiZ1ZApz6nyr6MSBQCcDG1Xgc0uc5NV3Lci8irn1aovdEFlpIt1YZz0NCuqAMU3PofKvi8YYCRlbFCyzr3ngx18qxEApzlwgIIOBuPWgubKc26sfI+VXd6oJwcmh7glz6ew86glGAoSSDm5v2etDzzZU4HTyzWJ2KsQ+/wAKGkkQLkkfzpZKYAqJyHbfPxzQ5jyc4P21O7lAOVI3HShzL/UWlEhNAUeY9V6+VXWzMQQ486Xxk+ppgSe4z7UhpRuCMSXG+OntRCTnlUnIPp50DbkkLvRQ/PT4/wAKe1LcEf8AO05N/wA7zBFF27KVB5huaVptIcbdKvXYx42yd6aClEJo/I4A5cE+eKtgilUqWBx0oCEnvMZPSm8H6EnzxRJZVjyB07tRt61iNjGoU5GM7etQOyLj1q09fr/nRhAVNJgzflFIHln91GsYuXCkL8KBABzkA9Kz05gNutSCgIR8U0aR8gYBhtuKlsCOY0qnJFymDjr/ABo2IkzMD0ydqxRZGq8abbdOmKqSeITZKkHPXFQCgy7gfZ71YVXIOBnbyrEFlfdyKI1VcqxGQ2Ktt5OWJAjcxwAcGqrv9HH/AGRVNsTzOMnbpU9FFkxVkbd88/lkdKnzqvMeVub1oFie8Xc9P5UadrfI67/fUbISFavgj8IzmoPJEsTKVAYjOc+dQiJyd/8Arehrj9Oo8iN6xRZWwOqZZiO8yalbl3lLSE8pHQ7gVRHvcb+p/hRR2RcbeI/eaklSAqLpn75EQ+EnJrFwVJwCDjqKlJ+mA8s0Hckhmx+zWBEArHZjupyoG1DXEkoPXJ5dtqhCzZTxHcDO/tX0xPfrv/1tWbIgFZGxeIM/X09KpEcSljzncGpjov8AbP31TMSJlGT0/jQogFGObmLDLDHqMVTM3PIqZHNtvWJyQ7EEjel6s3eg8xzzevwqSiAR88rQgqq5Y9T6CqS+RvknG9RkJMibnyqgE87bnoKFGFK5aNlIRc8pwaH8CxMTgH7qiN2fPqKFmJ77HlnpQkowFJGVELZ361RJJlsqWIx1qpSe8Iycch/jUMkJsf1KElGFjvBI/i6UPcCInAyAKk3n8KDyeXPnk/fS3FNAVUyFjkD4UOS+T4Xq9ye9Iz/1isnqaSmBf//Z" style="max-width:280px;width:30%;min-width:160px;border-radius:10px;box-shadow:0 2px 12px rgba(0,0,0,0.1);">
+    <img src="data:image/png;base64,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" style="max-width:280px;width:30%;min-width:160px;border-radius:10px;box-shadow:0 2px 12px rgba(0,0,0,0.1);">
+    <img src="data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCAECAQEDASIAAhEBAxEB/8QAHQABAAEEAwEAAAAAAAAAAAAAAAcFBggJAgMEAf/EAFUQAAEDAwIDAwYHCgwEAwkAAAEAAgMEBREGBxIhMQgTQRQiUWFxgQkykaGxwdEVGDNCUlRicpXhFiMkNjdVc3WCkrKzFzRTozU4djlDdIWUorTC8P/EABwBAQADAQADAQAAAAAAAAAAAAAFBgcEAQMIAv/EADgRAAIBAgIHBgQGAgIDAAAAAAABAgMEBREGEiExQVGxE2FxkaHBFCKB0SQzQlJi4SPwMlMVkvH/2gAMAwEAAhEDEQA/AMy0REAREQHTQ/8AIwf2bfoXcuMTBFEyNuSGNDRn1LkgCIiAIqVe9QWu0ebV1H8bjIiYMuP2e9WpVbiPyRS2xoHgZJM/MB9ah77H8PsZalaotbktr9N31O+2wy6uVrU4bOe7qSAij+k3EfxAVdtaR4mKT6j9qu2yX62Xdn8knHeAc4n8nj3ePuSxx/D76WpRqLW5PY/Xf9Bc4ZdWy1qkNnPf0PbQ/wDIwf2bfoXcuMTBFEyNuSGNDRn1Lkpg4AiIgC6aP8C7+0k/1ldy4xMEbS1ucFxdz9ZJ+tAckRCQASSAB1JQBFbF61rare8xQcVZKOREZw0f4vsyqDJuJVl+Y7dAGehzyT8qgLrSfDLaepOrm+5N+q2EnRwe8rR1ow2d+wkVFZVt3Bo5ZAyuo30wP47HcYHtGM/SruoaymrqdtRSTMmid0c0ruscWs79fh6ik+W5+T2nPc2Nxbfmxy6eZ3oiKROQIiIAiIgCIiAIiIAiIgCIiAIiIArR1xqr7mZoLe5rqsjz39e6H2r361vrbNbCInDyuYFsQ9Hpd7lEcj3ySOkkcXPccucTkkqjaWaRys18JbP53vfJcvF+iLHgmFKv/nqr5VuXP+j7NLJNK6WZ7pJHHLnOOSSuK9Fuo57hWxUlMwvkkOAPR6z6lLWntNW600zQIWTVHV8r2gnPq9AVJwXALnGJylF5RW+T5+7LFiGJ0rCKTWbe5EOLsgllglbLDI6ORhy1zTggqWdSaWt91p3GKGOnqgPMkY3AJ9BA6hRTXUs9FVyUtQwsljdwuBX5xnArnCJpzecXukv92M82GJUb6L1djW9MkjROrBcsUNwLWVYHmP6CT96u5QJG90b2vY4tc05BHUFS1oi/i82/gmIFXCAJB+UPByu+imkkrv8ACXL+dbnzXJ969Su43hKof56K+XiuX9FwoiK9FbCIiA4TyxQQvmme1kbBlznHAAUXav1ZUXR76Sjc6GjBxyODJ6z6vUvTuJqE1lS610j/AOTxO/jHA/Hd6PYFZqy3SrSWdacrS2llBbJNcXy8OvgXPBcIjTiq9ZfM9y5f2F9Vd0dp+S+Vx4y5lJFzleOp9Q9alGitFto6cQU9FA1mMHLAS72k9VF4Lorc4nT7bW1IcG9ufguXedmIY1Ss59nlrS6EIKo2K8V1nqhPSSkA/HjPxXj1hXjrnSUPk77laoeB7fOlhb0I8SB4H1KPVHX9hd4LdKLeUltUlx8PdHVbXNDEKLaWa4pk2afu9LeaBtVTuAd0kjJ5sPoKqKhfTN4mstzZUxkmI8pWZ5Ob9qmOkqIqqmjqYHh8UjQ5rh4hano3jqxWhlPZUjv7+9f7sZTMWw12VTOP/F7vsdqIishEhERAEREAREQBERAEREAXCeWOGF80rgyNjS5zj4ALmrM3Runk9ujtsT8SVB4pMfkD7T9C4MUv4WFrO4lwWzvfBeZ02dtK6rRpLj0LI1LdJLvdpqt5IYTwxt/JaOgVMRei20r624QUjPjSyBnsyVg9SpVu6zlLbKT9WaVGMKFPJbEl0JC2wtAp6F90laO8n82P1MH2n6Fea66WGOmpoqeJvCyNoa0egALsW74XYQsLSFvHgtve+L8zNr25ldV5VXx6cArG3Qs7ZKdl3hb57MMmwOo8D9SvldNfTR1lFNSyjLJWFp96/OL4fHELSdCW9rZ3PgebG6drXjUXDf4cSCFUNP3OW03SKsiJw04e38pviF5a2B9LWTU0gw6J5afcV0rCadSpbVVOOyUX5NGkyjCtBxe1MnikqIqqljqYXcUcjQ5p9RXarH2tupkp5bVK/Lo/Piz+T4hXwt2wnEI4haQuI8d/c+Jm19au1rypPh0Ct7Xd5+5Noc2JwFTPlkfPmB4uVwkgAknAHVQ5rG6G63yaZriYYzwRD1D7VF6VYs8PsmoP557F3c39OrO3BbL4q4zl/wAY7X7IoxJJJJySuUEb5pmRRgue9wa0eklcFdm2duFXezVSNzHTN4h+sen1rJMOs5X11C3j+p+nF+ReLu4VvRlVfBEgadtkdptMNHGBxAZkd+U49SqiiLfKFGFCnGnTWSSyRmVSpKpJzk9rBAIweiiDW9o+5N7e2MYgm/jI/UD1HuUvq19yrcKywmpa3MlK7jH6p5H7fcq7pZhqvbCU0vmhtXuvLoSuCXbt7pRe6Wx+xFSvva+88Ej7RO/zX+fBk9D4t+tWIu2lnkpqmOohcWyRuDmkeBCyrCMRnh13CvHhvXNcV/vEut9aRu6EqT+niTwi8lmro7la6etj6SsBI9B8R8q9a3mlUjVgpweaazX1M0nBwk4y3oIiL9n5CIiAIiIAiIgCIiAEgAknAChbVNyddL5UVWcs4uGP1NHRSZrm4/c7Ts7muxLMO6Z7T1+bKiBZrp5iGcqdpF7vmfRe5btGrXJSrvwXufFdu19CKi+vqnty2mjyP1jyHzZVpKUNrqPuLC+pc3DqiUkH9Ech8+VXtFLT4nE6ee6PzeW71yJTG6/Y2cst72ef9F2oiLazPQiIgIt3OoRTX4VLW4bUsDj+sORVqKT90aMTWOOqDcugkHP1Hl9ijBYnpXZ/C4nUS3S+ZfXf65mh4LX7azjnvWzy/o99hr32y7U9YwnzHjiHpb4hTZDI2WJkrDlrwHA+oqBFLG3NwNbp5kTzmSmd3Z9ngp7QTENSrO0k9ktq8Vv9OhGaSWutCNdcNjO3Xtz+51gkDHYmn/i2e/qfkURq69zrh5TfBSNdllM3BH6R5n6laahtLcQ+LxGUU/lh8q9/XoSGB2vYWqb3y2/YKV9t6EUmnWTEYfUuLyfV0CiynjM1RHE3mXuDR7ypzoYG0tHDTsGGxsDR7gpTQSz7S5qXD/Ssl4v+l6nFpLX1aMaS4vodyIi1MpgXXVQsqKaWCQZZIwtI9RC7EXiUVJNPceU2nmiCa+ndSVs9M/40UhYfccLoVybjUfkuppXtGG1DRIPb0PzhW2vn7ELV2l1UoP8AS2vsaha1u3oxqc0i/wDam5E+UWuR3L8LFn5CPo+dX8oS07Xm2XqmrPxWP84elp5H5lNjXBzQ5pBBGQR4rUdCsQ+IsXRk9tN5fR7vdfQpmkNr2Vz2i3S68T6iIriQIREQBERAEREAREJwMlARzuvW95X01A13KJhe4es/uHzqyFUdR1huF8q6rOQ+Q8P6o5D5gqcsFxq8+Nv6tbg3s8FsXoaZh9v8PbQp93rxPqmzTlKKOxUdPjBbE3i9pGT86h2z0/lV1paf/qTNafZnmpyAwAPQrjoDb/NWrvuXu/YgNJ6uynT8WERFpJUgiIgKfqSlFZYqynIyXREj2jmPoUJnkcKe3AFpB6EYUH3mnNLdqqnP/u5XD51m2n1tto113r3XuW3RmrsqU/BnjV07c3RtvuU8crsRSQud72jP2q1l9BI6Ki2F5OyuIXEN8WWS5t43FKVKW5ndX1D6qtmqXkl0jy459ZXQiLlnJzk5Pez3RSiskV3QlL5XqekaRlsZMh93NTAo52npuO4VVUR+DjDR7Sf3KRlruhNv2WG9p+5t+Wz2KLpDV17vV/al9wiIrgQQREQFibtUuYKKsAHmudG4+3mPoKj1S5uHT+UaWqCBl0RbIPcefzZURrHdNLfssTc1+pJ+3sXzR+rr2aj+1te/uFMWh63y7TVK8nL429072t5fRhQ6r82mrcS1dA48nAStHs5H6l50MvPh8RVN7ppr6710y+o0gt+1tNZb4vP2JBREWwlDCIiAIiIAiIgCp+pavyGxVlTnBbEQ32nkPnKqCtHdOpMViipwcGeYZ9gGfpwo3GLr4Wxq1lvUXl47l6nXYUe2uYQ5sjE9V8RFgZppcO3lP5RqmmJGREHSH3Dl85ClxRvtPBxXOrqCPwcQaPef3KSFr+hNDs8M1/3Sb9vYomkNTWvNXkl9wiIreQQREQBRHuHT9xqioIGBIGvHryFLijjdiHhudJOB8eItPuP71UNNqPaYZr/tkn7e5O6PVNW81eaf3LJREWQF7CIiAk3aqDu7JPORzlmx7gP3q8FQ9BwiDS1GPF4Lz7yq4t4wKj2OHUYfxT89vuZriVTtLupLvfpsCIiljhCIiA8l5p/KrTVU+MmSJzR7cKDjyOFPjhkEelQZdofJ7pVQYx3crmj3FZvp/R20aviujXuWzRip+ZDwZ5VXNDVfkmp6RxOGyO7t3+Ll9OFQ1zge6KZkjSQ5jg4EepUGzuHbXEKy/S0/Jlnr0lVpSpvimiekXVRTCpo4ahvSSNrx7xldq+hIyUoqS3My1pp5MIiL9HgIiIAiIgCjfdip47nS0oPKOIuPtcf3BSQog19P5RqqrOchhDB7gPryqfptcdnhup+6SXv7E7o7S17vW5J/YoKIiyEvZI+0sJbbqyfHx5Q35B+9XsrY2zh7vTDH45yyud8+PqVzrc9HKXZYXRj3Z+e33M3xaeveVH39NgREU2R4REQBWRuzDmgo5wPiyFp94/cr3Vr7mxh+mS/l5krT9ShNJKXa4XWXdn5bSRwmepeU339dhFSIiww0cL6OZAXxd1GzvKuGP8p4HzrzGOtJI8N5LMmuyRdxZ6OIjBbC0H5F7Fxjbwxtb6AAuS+iaUFTpxguCSMqnLWk5cwiIvYfkIiIAod1xD3Oqa5uOTnhw5ekAqYlFm58Pd6kEgGO9ha7p1PMfUqXpzS18PjPlJeqaLBo3PVunHmvsWqiIslLwTDoOp8p0tRknJjaYz7jgfNhVxWXtPUcdqqqYk5jlDseoj9yvRbvgNx8RhtGf8UvLZ7Ga4nS7K7qR7+u0IiKXOEIiIAiIgBOASfBQZdp/KbpVVGc95K53ylTVdZTDbKqYdWQvcPcCoMPMkrONP635FLxfRfctmjFP8yfgup8RF9WcFsJi0RGYtLULSCMx8XP1kn61Wl4rDH3NloouXmwMHL2Be1fQdhT7K1pQ5RS9DLrmevWnLm31CIi6z0BERAFRdcxmXS1aACSGB3L1EKtKn6kj72wVzME5gdyHsXHiMO0tKsOcX0Oi1lq14S5NdSEkRF8+moBVHTUfe3+hjwec7entVOVc0LH3mqaIYPJ5dy9QK7MOh2l3Shzkupz3ctWhOXJPoTCiIvoIy8IiIAiIgCjrdqLFfRTY+NG5vX0H96kVWNu3HmjoZuXKRzfXzH7lW9LaevhNXuyfqiWwOerew78+hHaIixU0IvXaefgulXTk8pIg4D1g/vUkKJduZTFqqnGcCRr2n/KT9SlpbBoTW7TDNX9smvf3KJpDT1bzPmk/b2CIitxBBERAEREBR9aSiHS9e4+MfD8pA+tQ0pY3Lk4NLSt5efIxvP25+pROsm07qa1/CHKK9Wy76NwytpS5v2QXJgy4AeJXFd1E3jrIWEZ4pGjHvVMhHWkkWCTyWZOdKzu6aJmAOFgGB4cl2L434o9i+r6KiskkZS3m8wiIv0eAiIgC6Li0Pt9Q09DE4H5F3rjKMxPA55aV+KkdaDR+oPKSZArvjH2r4uypBFRICMEPP0rrXzrJZNo1VPNBXNtqwO1TEST5sbiPkVsq7drW51E93Dnhgdzx05hS2AR1sToL+SOLE3lZ1H3MlBERbuZqERcJpYoIXzTSMiiY0ue97gGtA6kk9AgOaLhBLFPCyaGRksT2hzHscC1wPQgjqFzQBWhuqzisEL+Xm1A+gq71bO5kfHpd7uHPBK12fRzx9ah9IIa+GV1/F+m078Llq3lN95FCIiwk0kqmlJu41HQSE4AnaD7zj61NKgiikMVZDKCAWSNcM+oqdwcgFadoDVzoVqfJp+a/op+k8MqlOXNP0/+hERaAVcIiIAiIgLP3Wl4bJTxZHnz5x7AftUZKQt3HuEFvjz5pc8n28vtUerGdMZ62KzXJJemfuX/AACOVlF82+oXusLS6+ULW9TUM/1BeFVPSrO81Hb25x/HtPyHKgLKOtc0485LqSdw8qUn3PoTUiITgEgE+oeK+hTLTEvtgdo+46Wu0+gdA1Ip7pCALlc2gOMBI/BRggjiwQS7w6DB5jCm9Xi7XuvfX3m6Vtyq3/Hnq53SyO555ucSepK7dV3KsvGp7pdrhJ3lXWVks878AcT3PJJwOQ5lUxASvsxv3r7bW504p7tVXWyMLWy2msnc+HuweYjznundebeXpB6LZLoHVNp1ro+26oskpkobhCJY844mHoWu9Dgcgj0hag1nx8HHW1E+0t8pJZC6KmvLhED+KHRMJHy80BlAh6FEQGHfaI3Qj2+bJQUDIqm+VLnmJjjlkLc443DqfUOWfcsTr9rrWN8rHVVy1Jc5XOcXBjahzI2fqsaQ1vuCuTtL3Ke574aofPxjyetdTMa78VrOX2n3qOFX8EwO2sqKk4pzltbe/bw+hKYhiNW4qNa2UVsSL40VurrbS1bHLT3urraVuA+krJXSxObnoA4nh9rcLPLswauoNcW51+tzTGHQmOeFzgXQygjLT6fSD4gha1Vlx8GxX1A1Zqu18f8AJnUMVRw/ph/Dn5Cvfc4LbVLmndQiozi89mzNd566WIVY0Z0ZPOMl5GcCIimSPIi7T+8tHtFo5k0ELKu/3LijttO4+aCB50r/ANFuRy8SQOXMjXTrrXmsNcXF9dqrUNwuj3SGRkc07jFET4Rx54WD1NAU1/CHVVRLvnS0skr3QwWaAxMJOGlz5C4gevA+RY3oC4dE621boq5MuGldQXC1TNcHEQTEMkx4PZ8V45dHAhbE+yzvTTbt6TkZWsjptSWxrW3CFvJsoOQ2Zg/JOOY8D6iFrLWQXYDrqql7QNNTQCQxVluqYp+HGA0N4xn1cTG+/CA2LKgbgtLtJ1mMcuE//cFX1R9asEmlq8E4xHxfIcqPxaOtY1o/xl0Z1WL1bmm+9dSGkRFgJpx9acOB9BU7UMne0UEuc8cbXZ9oUEhTbp1zn2Cgc45Jp2Z/yhaDoBPKrWhzSfk39yr6Tx+SnLvZ70RFppTwiIgCIiAj7dwjvbe3PPhecZ9isNXvu1/4jRf2J+lWQsR0qeeLVvp0RomCrKxp/Xqwqvo5pdqegAGf40FUhVrQ/wDOqg/XP+kqMwxZ3tFfyj1R13jyt6j7n0JjRF5bxcaK0WqrutyqY6aio4XTzzPOGxsaMuJ9gC+gTMDW12utrLht5ufX10NIRp+8zvqrfOxmI2Fx4nQ8hhpaScD8nBULKc+052gbzupXy2W2B1BpKCbigpi0d5UObkCSU+8kNHIZ8TzUGIDuoaWprq2GioqeWpqZ5GxwwxMLnyPJwGtA5kk+C2edlbbafbHaajtFxa0XaskNZcA05DJHAAMz+i0NHtBWtTR+o7zpHUlFqLT9Y6juVFJxwShodg4IIIPIggkEH0rY32Xt8KDdvTr6etbDRanoGDy2lacNlb076MHnwk9R+KTjxBIEzIiIDXD2z9G1dr3Or9VQROfb7nORI8DIjmHIg+jIGR71AqyN7U28bLpfrxpLTJp5qDv5I6yscxsglIcctjzkAD8rr6MdTjkorBndfDZXMcmm8ueWezPlsO2/VHtc6LzWzPx4hZ1/B7aLqbFYbzqK5U74aq6NjEDHtIcIASQcfpE56dAPSsGKeV8E8c8ZAfG4PaSARkHI5HkVnp2LN4aXWlRW6fvToKXUDIWvja0hratjfjOYPBw8Wjw5jl0991K5VakqS+TN6z47nls8T10VR7Obm/my2ee30MoERF3HMYk/CC7YXG82+37iWSjkqn22E090ZE0ue2DPE2XH5LSXZ9AdnoCsHVmz2we0hU2mtrNvdBVXdVkZMN1uTeF3d5GDDHnPnc8Od1B5DnzGE5JJJJJJ5klAfFmt8H5tVc7a+r3MvlKaaOqpjS2mKVhD3scQXz8+gIAa0+ILvDGcKRyOQsyuyD2kq6ouVBt5r6pjlika2ntVzd5r2uHJsMvgQRgNdyIIwc5yAMzlS9WtL9NXBo69w4/Mqoqdqf8Am7cP/h3/AELkv1na1V/F9D32zyrQfeupCaIi+fDUQpo0g4O0zby05HcgfIoXUxaFIOlKHBz5h/1FXnQKX42ov4+6K5pKvw8H3+zK2iItVKUEREAREQEa7sE/dmmGTgQdP8RVmKRdwbDdbrdIJqGm71jYeEnjaOeT6Sra/gbqL8w/7rPtWN6QYXe1sSrTp0ZNN7Gotrcu4vuF3lvTtIRlNJ5c0W+q1of+dVD+uf8ASV3fwN1F+Yf91n2q3dTax0/tJWwXXWlbDTuaHmKihkZLUzO4DgNjacgdPOOGjIyRlcuGYRfRvaMpUZJKUdri9m1dx77y+tnbzSqJvJ8VyJ/WL3wiGs6my7c2nSVFK6N1+qXPqXNxzgh4TwH9Z7mHl+QR4qO73vNvdvzf5LBtRaq2wWmJ/n1FJMY5WtPR01TyDOhIazB6jzsK6e0JsJuxrey6Ho4bjSXyts1p8nuNVU1pb3lQXZc4cYy7IAHEeZwMrbjOzCNFkB96HvL+ZWb9ot+xPvQ95fzKzftFv2IDH9SB2edaVOg937BfYphHTmqbTVgccNdBIQ1+fYDxe1oUgfeh7y/mVm/aLfsXOn7I28kdRHJ5HZhwuByLi3wPsQGxRrg5oc05BGQVEna61pPojY2811E9zK6v4bfTvA+IZchzuvgwO9+FKtvjkioKeKU5kZE1rznPMAZUI9srbXVu5uirPadJU8E89NXmeZk1Q2JvDwEA8+pyUBrdJJOTzK+KevvSN6P6otf7Sj+1PvSN6P6otf7Sj+1AQKqzojUVw0lq216jtU7oau31LJo3DxweYPqIyD7VMP3pG9H9UWv9pR/an3pG9H9UWv8AaUf2oDYfpy60980/b7zSO4qeupo6iM8/ivaHDr7Vbm9urTobarUOqIwDPRUbjAHDI713mszzHLicPFd+z9ouun9rtN2O9xxx3Ggt8VNUNjcHNDmN4eRHI8gFbnag0bqLXuzty0vpcQm4VU0BDZZu7a5jZA5wJ9gQGrqrqJ6uqlqqmV808z3SSSPOXPcTkknxJJXUsgPvQ95fzKzftFv2J96HvL+ZWb9ot+xAY/rnDJJDMyaJ5ZIxwc1wOCCOhU+/eh7y/mVm/aLfsT70PeX8ys37Rb9iAze2B1fLrvZ7Tep6kvNVVUnBUlzQC6aNxje7A5YLmEj1FXVqRpfYK9o6mnf9BUBaG0Fu/oHss1mltOPo4NZR1UktOGTMkAic5pIjc7zQ8jixnlk+nmo+0J2p9Q2F1TovemwVdLXMjMPl7aV0U8eWnBmhPxgeR4mAcvxT1Xouo69CcVxT6HsovVqRfeiUUXs0tb5tU2WC9admpLpb5xmOenqWOb7Dzy1w8WnBHQhVT+BuovzD/us+1YV/4bEP+if/AKv7Gk/H2v8A2R80W+pf2/8A5p0f+P8A1FWB/A3UX5h/3WfapG0fR1FBp6mpKuPu5mcXE3IOMuJ8FbtC7C6tr6cq1OUVqva01xXMgtILqjVtoqnNN58GnwZTbndaqSdjmzdxSyVLqeLhlEfEWg8TnPIOBkEABd9juVT38LJpHTU88j4mPc5riyRvPAcAA5pAODjPJca20TNrmZpjV0Tah1Q1jOHiDnAhzSHEAjJyCu60W6r7+nNS10VLRlxpo5CDJkjA4iCRgAkDnlWalG9+Kzlrb/pwz7sstbL6cSIm7fscllu+vHLvz3Z/YryIitBDBEXXVVEFJTS1VVPFBBEwvklkeGsY0DJJJ5AD0oDsVI1fqfT+kbJLetS3ektdBF1mqJA0OOCeFo6uccHDRknwCx13n7XWn7JMbLttSM1NdnHg8re13kjHHkA0DDpXZ8BgeglR7o/YTdreu8Qau3gv1da6CQhzIJmgVToz1EcOOCAHA+MM+PCUBWNy+1RqjWN4GkdkbDWyTzksbXOp+9qZRjBMcWCGAdeJ2fThq9W1HZLuV5uX8K96rzVV9dO8SyW2OrMkkh8e/nyST6mH/F4LJTbTbjRm3NqNv0lY6egDwBNPjjnnI8XyHznePLOBnkArtQFO05YrNpy0w2mw2ykttDCMRwU0QYwcsZwOp9Z5lW5vFuVpza/SM1/1BUDiILaSkY4CWrlxyYwfJl3QDmfDPl3w3U05tRpKS83qUTVcoc2gt7HgS1cg8B6GjILneA9JIBxO2y0BrjtO62frzcSsqaXSsEjmQsj8wSNBz3FOPBg6Ok5k4xkuyQBU9n27q9oPeSh3IuNynsmmrDWtfAyGR7YmhpBMEQz5xcAA9x8D7GrNxeDT9ntmn7LSWazUUNDb6SMRQQRNw1jR/wD3XxXvQBEXx7msY573BrWjJJOAB6UB9WJPaY7RVzqL3/wz2hkkq7vUS+TVFyozxPEhOO6gI/G9Lx08PSKT2l9+7xrO/jarZ989W6qk8mq66k+PVOPIxRO8Ix+M/lnB58OSZb7MewFn2stkd4urIrhq6oixUVXxmUwPWOL6C7qfUOSAkDZe26utO2VloNdXL7o6gig/lc5fxuySS1rnfjODSAXeJHU9VZHan3ortnbTY6m3WWmuc9yqXseKiRzWsjYAXY4efEc8vAetTQsSfhKY2fwP0jLwjjFwnaHeruxy+ZAZVWKuF0slBcxGYhV00c4YTnh42h2M+OMqFO2Fq7dLQ2m7TqTb57GW6lmcbw7yWOYhnm8HEHAkM+MC5uCOXMKXdB/zHsP920/+01VeohhqIJKeoiZLFI0sex7ctc08iCD1CAi/s770WHdvTQmgMdFfqVgFwtxeC5h6d4zxdGfT4dD65TWFPaH2Ov8AtdqVm6uzpq6enppe+qaOmHE6iPi5rfxoT+M0g45/i9Jx7Nm/Fh3Ys7KKofFb9U08eaugJwJQOssWerfSOrfHlgkCZUREBRtc2ao1Do672KkuL7bPX0clPHVMaHGFzmkB2PHGf3hYXba7l677Nuunbd7lQz12mnycUMocX9ywnHfQOPxoz1MZ6HPQ5znUrJ3i2y0vujpZ9k1HS5ezLqSsjAE1LIR8Zh+TIPI+KAuuzXO33m1U11tNbBW0NVGJIKiF4cyRp8QQrZ3P2y0TuRbPItW2SCscxpENS3zKiD1skHMc+eOh8QVhzorWOveyxuMdHawZPctIVLzIxsYyx7CR/H05PRw/GYSB1z4OWcumb7aNTWKkvlhuEFwt1XH3kE8LstcPqIPIg8wQQUBhdqbZDeHYq9Tat2mvlXd7TGeOaCHnMWDPmzU/xZgAerQSOoDcZUk7JdrfS+pe6s+4EUOmLxxCPyriPkUx9JJ5wn1OJH6XgMmlEe9fZ80Due2Wtq6M2i+uaeG50LWte92OXet6SDp1w7AwHBASzTzQ1FPHUU8sc0MrA+ORjg5r2kZBBHIgjxXNYHGDf7sv1neROOoNFtly4DM1GW+sfHpnY8eTScc34wsjtke0VoLc1kNAyq+4d/eQ02yteAZHH/ov6SDPIDk7l8VATGiIgCIiAKBO1Ns7r3dm6WWjserqO16bhZi4UdRJKOKTiyJQxjSJCGnADnNxjkeZV/bxbt6L2qtUVZqmuk7+oB8loaZgkqJ8deFuQAP0nED1rHv7+O2+X8H/AA4q/I+L8L91m95jPXg7rGcc8cXXlnxQE07LbA6A2vjiq7fQfdO+Aefda5ofKDjn3bfixDr8Xng4JKlhWBs7u9ordS2yVOmK94qoGg1NBUtEdTDnxLckFueXE0kZ8Vf6AIiije/fzQu1MgoLrNPcb09ge220QDpGtPR0jiQ1gPr5kcwCEBZ2v+zU3Xm/EmuNU6mdW6dc2NwtXA4SeY0DuQ7iw2MkcRIwTkjAPnKf7ZQUNrt8FuttJBR0dOwRwwQRhjI2joA0cgFiXa+3FZ5LiyO57eV1NRF3nTU9zZNIB6Qx0bAT6uILJbbXXultxNOsvulLmytpS7gkaRwyQv8AyHsPNp+kcxkIC50REAUR9qzSW4Gtttm6f0BWQwy1FS1twjfN3Jmp8HLeP0ZxkeI+Q0bentP6D25us9ip4anUV7gdwz09G9rYoHDq2SU5Ad6mhxByDhWBpftu6bq7iyHUWiLjaaVxwailrW1ZZz6lpZGcenBJ9AKAlbs27H2TaXT4keIa/UtVGPLq/h6ePdx56MHuLsZPgBLypek9RWXVdgpb9p64w3C21bOOGeI8j6QR1BB5EHmD1VUQBQr2stn73u/pmzW+xXS30NRbqx0zvLeMMexzeE4LA45Hoxz9IUs6lvlo03ZKq9324QW+30rC+aeZ3C1o+snoAOZPILF/Vvba0xQ3J9PprRlwvNKw48pqaxtIH+treB5x7cH1BAZR6eoXWuwW62PkEjqSligLwMBxYwNzj3L3KBNme1LoPcG6wWOup6nTd4qHBkENW9r4ZnHo1kox53qcG56DKntAfHAOaWuAIIwQfFYg9oPs5ahtGr4dxdlYn09cycTzW6me2J0Muc95DkgcJ8WfJkHCy/Vt7i640zt/puW/6qucdDRsPCwHzpJn+DGNHNzj6B7+SA9WhZb/AD6NtE2qaaKmvj6SM18UTgWtlx5wGOXX0clWliFdu3FZ4rg6O1be11XRh2GzVNzbBIR6eBsbwPZxKYNj+0FoXdWf7mW99Rar4GF5t1bgOkAGSY3A4eB6OTsAnGBlAS6iIgLX3P0FprcbSlRpzU9C2pppPOikHKWnkxykjd+K4fOMg5BIUfdl7Ze7bPQX+lrtUi8UtwnY6lgjicxkQZxeeQScPdkAgcvNHM8sXfu9uvoza20x12qbg5ss+fJqKnaH1E+OvC3I5dPOJAGRzWPLu3HbPugWN25rDR8WBKbq0ScOevB3WM48OL3+KAzARR7svvFovde3TT6aq5o6ymANTQVbQyoiB/GwCQ5ueXE0kenCkJAcJ4op4XwzRslieC17HtBa4HqCD1Cxu3u7JektWOlu+h5IdK3g5cYGRnyKZ3rYOcXtYMfolZKKKt7d+tCbVOFFd6ia4Xl8fGy20QDpQD0LySBGD6zkjoCgKR2U7LvHp6zXaz7qVTamlpZI47S+SpbPMWgHj88Eks+Jji87r0U2LEG29uK0yXBjLjt3W09EXDjmgujZpAPEhhjYCfVxBZK7ZbgaV3H042+6TuTaymDuCVjmlksD8Z4HsPNp+Y9QSEBdKIiA1Mb0a1r9wdy71qeundI2pqXNpWE5EVO0kRMHqDce0knqVZyvPezRFdt7ubetMVkD444Kl76N7hympnOJiePa3GfQQR4KzEBeWy2srjoPc6x6kt0r2mCqYyoja7Amgc4CSM9erc+BwcHqFtlaeJod6RlandkNF3HX+59k05b4nlstSySqla0kQQMIdI8+wDlzGSQPFbYmjhaB6BhAUjXF7bprRd71E6MSi12+es7snHH3cbn8Pvxj3rUfqS83LUV/rr5d6qSrr66d088z+rnOOT7PYOQW3HW1kZqXRt606+XuW3S3z0Zkxng7yNzOLHqzn3LUjqmxXPTOoq+wXmkkpa+hmdDPE8YIcD84PUHoQQQgKYpp7GWtazSO+dnpWzSi33t/3Pq4mjIfx/g3YyBkScPPwBd6VCymzsYaGrdYb3WqubDMLbYpBcKydvINc38EzOCMufjl4ta7HRAbLFHPaW1dW6H2T1HqC2O4K+OBsFM/8h8rxHxjn1AcSPWApGUddpTR9brrZXUWnbYOKvkgbNTM/wCo+NweGe13CQPWQgNV80kk0z5pXukke4ue5xyXE9SSuC5zRSQTPhmY6OSNxa9jhgtI6ghcEBlX8HTq+5Uuvbrop0jpLbX0bq1rCeUUsZaC4D9JrsH9ULO1YK/B1aNudTri6a4fE+K2UVI6ijkc04mlkLSQ0+PCG8/1gs6kBg58IvrW4T6rtGhIZXx2+lphW1DByEsryQ0nnzDWjly6uKxKWW/wi+ibhDqi0a8giklt9TTChqXgZEMrCS3PLkHNJxz6tKxIQH1jnMeHscWuacgg4IK2i9lXWNbrfY+xXi5yd7XxMdSVEhOS90TuEOPrLeEn1rV3Gx8kjY42ue9xAa1oyST4BbRuy1o2t0LsjYrLc2GKvex1VUxluDG+Q8XCfWBgHPiCgJQWt/ty6vuWod87jZqiRwobC1tJSw580Eta978eklwHsaFsgWuLtz6Nuend76++zxPdbr8G1NNPwnh4mtax8efSCAfY4ICBF7bDda+x3mjvFrqZKato5mzQSsOHNc05BXiXv0/aLhfr5RWW1U0lTXVszYIImDJc5xwAgNte3V+dqjQVh1G+Nsclyt8FVIxvRrnsBcBzPLJKrr3BrS49AMlULbuwu0toOw6bfKJn223w0r5B0c5jACR6iQVXXNDmlp6EYKA1R7+a2rdf7r33UFVUPlgNU+Cha4ECOmY4tjaBnly5kelxPirEV/8AaC0RV7f7tX2wz08kVL5S+ooHOBIkp3kuYQ4/GwDwk+lpVgIC6dqdZXTQOv7Tqi1SuZLR1DTKwHlNETh8bvU5uR6uo5gFbbIJY54I54XB8cjQ9jh4gjIK1KbT6Lumv9f2rS1pic6WrnHeyAebDEDl8jvU1uT6+nUrbXTwx09PHBC3hjjYGMb6ABgBAU7V94bp/Sd3vz4TO23UU1WYw7BeI2F2M+GcLUbqi+XTU2oa+/3qqfVXCvmdPUSu/GcT4egDoB4AALbnq20Mv+lrtYpJTEy40U1K54GeESMLc4yM9fStR2rbBdNLaluGnrzTPpq+gndBNG4Y5g9R6WnqD4ggoClqZOxxrWv0fvpY6eGZwob5Oy2VkOfNk708MZ9rZC0g+jI8SobUzdjbRFdrDfOyVUUDzb7FOy51k4HKPuzxRD2ukDRj0ZPggNmSIiA1p9qzeuHdvUcENss9NS2e1ve2iqZIx5VOCebnO6tYeRDPDqST0hNEQE39lHe2LabUUtJdLXTVFjukrRW1McI8qgxyDmu6uYOpYfWRz67IbZXUlzt1NcbfUR1NJVRNmgmjdlsjHAFrgfEEEFab1sB+D11fV3zaiu05WyOldYKzu6dxIyIJQXtb6eTg/r4YHggJ+1vqez6N0rX6lv1UKa30MRklfjJPgGtHi4kgAekrWN2gt06rdnXDtQTWeitUEUYhp4oWNMpYOhllwC93zAcgBzJyC+Ei1dN5VpvQ0E4EAY651UY/GcSY4s+wCT/MsN0AWT3Yx33tmh6qPQ+pbfQUlqr5v4q6wwhkrJXHl35Hx2c8Bx5t9nTGFEBuYBBAIOQeYKsnejcmxbW6Jn1Je+KV2e6pKSMgPqZSOTB6B4k+AB68gbY7IWs6nW2xdlrbhO6e4UPFQVMjjlz3RHDXE5JJLOAknqSVih2/tXVV73n/AIOCSQUNhpWRMjLvNMsjRI94HpILG/4UBC+5mrqrXWtbjqitoKCgmrpON0NFCI4x6zj4zj4uPMnmrbREBm92KN+bZW0lBthf6KgtdXEzgtdTSwtiiqj1LHtHISnrxD43Px65dLTfba2qt1xprhRTOhqqaVs0MjerHtOQR7CFtMt24cc/Z9ZuQQwvFiNc5rXAjvRHkt9HxxhAQp21N+LXaKGt2zslBQ3a4zs4blLVwiWGkBGQ1rTyMvQ56N9vTBZey9XKsvF3q7rcJ3z1dZM+eaR5yXPcckk+0rxoCv7e6pq9F6wt2pqKioK2ehlEjIa2ASxu9x6H0OHMHmFs92N3Pse62iotQWkeT1DD3VdRudl9NLjm0nxB6g+I9eQtUayA7COsZ9Ob3U1ldPwUN+idSysc7zTIAXRn25BH+JAbGCQBknACwT7ae/Nt1VLU7eaaoKCtt9JN/KrnPCJHGZp5iAn4oHMF/U8wMDmcm+1TrGfROx9/utFN3VdNEKOldxAFr5Tw8Q9YBcfctXJJJyTkoD4r/wBhty6jazXkGpIbRQ3SMN7qaOeMGRrD8YxPIzG/HLI6jkeSsBEBt62/1bZdc6RoNT6fqDPQVsfE3iGHMd0cxw8HNOQVWK2qpqGjmrKyeOnpoI3SSyyODWsaBkuJPIADxWFnwcGrqpl71DoeaSR9LLTi407S7zY3tcGPwP0g5v8AkUndv3WVRp3Z2OxUMwiqNQVQppSCQ7ydo45MYPiQ1pzkYcQgMau1rvlTbrXqK1Wa1UsVitczjSVssI8rnJGHHiPxIz1DR1wCefIQOiICY+y3vO3aLVM8lbZqe4Wq5cEVZIyNoqoGg/Gjf4jxLCcHA5g81srtFxobvaqW6W2pjqqKrhbNBNGctkY4ZBB9hWnFZ6/B16tluu2930nUzOkfZKwSU4IPmQzZPCPDHG159PnIDIzWepLPpDS9fqS/1baS20ERlmkPyAAeLiSAB4kgLWT2iN1qjdvW/wB3H2ikttLTtMFIxkY790WcgzP6ud6ujckDxJyE+Eg1hVxt05oWnkLKaZrrlVgH8IQSyIHxwP4w+gnHoWGCALJjsZ772/QNZHojUVvoqezXKqBF0jYGSQSu5AzH8dnQZOCwekdMZ0QG5Xvof+qz/MEWn3+EN/8A68uf/wBU/wC1EBTEREAWZPwZn4fX36tv+mpREBZXwif9OFv/ALjh/wB2ZY1oiAIiIDYL8Hb/AEH1399zf7cSxb7Zn/mR1X/aQf7EaIgIeREQBbANOf8As/ZP/T03+tyIgNf6IiAKSOzB/wCYLRP96x/WiIDMj4QT+gT/AOaU/wD+y13oiAIiIDJT4O3+m+v/ALkm/wByJX98Jd/yWif7Sr+iJEQGFqIiALMX4NEn7oa3Hh3VH9MqIgLQ+EY/pytf/p2D/wDIqFjSiIAiIgCIiA//2Q==" style="max-width:200px;width:20%;min-width:140px;border-radius:10px;box-shadow:0 2px 12px rgba(0,0,0,0.1);">
+  </div>
+
+  <div class="dark">
+    <div class="dark-title">The Multiplier Commitment</div>
+    <p style="font-size:13px;line-height:1.8;color:#d3d1c7;margin-bottom:12px;">The distance between #1 and #20 is not talent — it is knowledge, standards, and support. The Ideal TPPH column tells us that for several locations, the single biggest lever is not coaching their GM harder — it is fixing the scheduling. Get the hours right first, then build the TPPH habits that sustain it.</p>
+    <div style="border-top:1px solid #5f5e5a;margin-top:14px;padding-top:14px;font-size:12px;color:#888780;font-style:italic;">"Multipliers are leaders who look at the world and see capability everywhere." — Liz Wiseman</div>
+  </div>
 </div>
-
-<script>
-var goals = [
-  {loc:'455 - Macon Rd',     nsn:455,   apr:6.07, labor:19.9, rate:11.54, ot:106.3, actvneed:-32.4,  goal:6.27, imp:0.20, tier:'avg',    focus:'Solid TPPH — push toward top tier'},
-  {loc:'02066 - Commerce',   nsn:2066,  apr:5.06, labor:23.7, rate:12.50, ot:251.7, actvneed:317.4,  goal:5.46, imp:0.40, tier:'urgent', focus:'Significantly below avg + overscheduled · <strong>Reduce OT</strong>'},
-  {loc:'02435 - US 280',     nsn:2435,  apr:4.84, labor:23.5, rate:12.04, ot:221.9, actvneed:543.3,  goal:5.29, imp:0.45, tier:'urgent', focus:'543 hrs overscheduled — highest priority'},
-  {loc:'03895 - Valley',     nsn:3895,  apr:6.78, labor:17.3, rate:12.62, ot:198.8, actvneed:-71.0,  goal:6.88, imp:0.10, tier:'strong', focus:'Understaffed 71 hrs — small stretch, monitor service · <strong>Reduce OT</strong>'},
-  {loc:'05031 - Airport',    nsn:5031,  apr:5.41, labor:21.9, rate:11.81, ot:184.1, actvneed:381.7,  goal:5.81, imp:0.40, tier:'urgent', focus:'382 hrs overscheduled — urgent fix'},
-  {loc:'06080 - Victory Dr', nsn:6080,  apr:6.00, labor:18.2, rate:12.07, ot:197.6, actvneed:-71.2,  goal:6.10, imp:0.10, tier:'avg',    focus:'Understaffed 71 hrs — small stretch, monitor service · <strong>Reduce OT</strong>'},
-  {loc:'07562 - 4th Ave',    nsn:7562,  apr:6.56, labor:26.7, rate:15.87, ot:112.8, actvneed:62.7,   goal:6.66, imp:0.10, tier:'strong', focus:'Top performer, well staffed — 26.7% labor highest in portfolio'},
-  {loc:'10521 - Stadium',   nsn:10521, apr:5.53, labor:21.8, rate:11.78, ot:167.8, actvneed:37.0,   goal:5.78, imp:0.25, tier:'below',  focus:'Near avg + 21.8% labor — scheduling efficiency needed'},
-  {loc:'11362 - Milgen Rd', nsn:11362, apr:5.97, labor:21.1, rate:12.02, ot:44.4,  actvneed:236.4,  goal:6.27, imp:0.30, tier:'below',  focus:'236 hrs over — scheduling discipline required'},
-  {loc:'11743 - Whitesville',nsn:11743, apr:5.91, labor:19.4, rate:12.47, ot:149.8, actvneed:-93.9,  goal:6.06, imp:0.15, tier:'avg',    focus:'Below avg + understaffed 94 hrs — balance scheduling'},
-  {loc:'11822 - Buena Vista',nsn:11822, apr:6.12, labor:19.5, rate:12.24, ot:155.5, actvneed:-91.6,  goal:6.22, imp:0.10, tier:'avg',    focus:'Understaffed 92 hrs — small stretch, monitor service'},
-  {loc:'11915 - Manchester', nsn:11915, apr:6.15, labor:20.9, rate:12.13, ot:87.2,  actvneed:78.0,   goal:6.35, imp:0.20, tier:'avg',    focus:'Solid TPPH — push toward top tier · <strong>Reduce OT</strong>'},
-  {loc:'15069 - Bradley Pk', nsn:15069, apr:5.94, labor:20.6, rate:11.60, ot:113.0, actvneed:424.2,  goal:6.24, imp:0.30, tier:'below',  focus:'424 hrs over — scheduling discipline required'},
-  {loc:'19461 - East Main',  nsn:19461, apr:4.98, labor:21.4, rate:12.30, ot:179.9, actvneed:424.7,  goal:5.43, imp:0.45, tier:'urgent', focus:'425 hrs over · Far below avg — highest priority'},
-  {loc:'24343 - N Veterans', nsn:24343, apr:6.95, labor:17.5, rate:12.29, ot:61.0,  actvneed:-668.3, goal:6.65, imp:-0.30,tier:'urgent', focus:'668 hrs understaffed — TPPH inflated, must add staff · Goal reduced'},
-  {loc:'24344 - Ladonia',    nsn:24344, apr:5.06, labor:21.5, rate:11.96, ot:177.1, actvneed:187.9,  goal:5.46, imp:0.40, tier:'urgent', focus:'Significantly below avg + overscheduled · <strong>Reduce OT</strong>'},
-  {loc:'25063 - Lees Xing',  nsn:25063, apr:6.02, labor:21.2, rate:12.67, ot:186.8, actvneed:248.5,  goal:6.32, imp:0.30, tier:'below',  focus:'248 hrs over — scheduling discipline · <strong>Reduce OT</strong>'},
-  {loc:'31329 - 431 North',  nsn:31329, apr:4.30, labor:25.7, rate:11.63, ot:111.2, actvneed:486.4,  goal:4.75, imp:0.45, tier:'urgent', focus:'Worst in portfolio · 486 hrs over · 25.7% labor'},
-  {loc:'33945 - Lafayette',  nsn:33945, apr:6.19, labor:19.8, rate:12.37, ot:74.6,  actvneed:-183.0, goal:5.99, imp:-0.20,tier:'urgent', focus:'183 hrs understaffed — hold TPPH while fixing staffing · Goal reduced'},
-  {loc:'35634 - Flat Rock',  nsn:35634, apr:6.48, labor:17.5, rate:11.64, ot:197.7, actvneed:165.0,  goal:6.68, imp:0.20, tier:'strong', focus:'Good TPPH but 165 hrs over · <strong>Reduce OT</strong> 198 hrs'},
-];
-
-var tierConfig = {
-  top:    {label:'Top',    cls:'tier-top',    goalCls:'top'},
-  strong: {label:'Strong', cls:'tier-strong', goalCls:'strong'},
-  avg:    {label:'Average',cls:'tier-avg',    goalCls:'avg'},
-  below:  {label:'Below',  cls:'tier-below',  goalCls:'below'},
-  urgent: {label:'Urgent', cls:'tier-urgent', goalCls:'urgent'},
-};
-
-var tbody = document.getElementById('goalBody');
-goals.forEach(function(g) {
-  var tc = tierConfig[g.tier];
-  var impCls = g.imp < 0 ? 'imp-lg' : g.imp <= 0.15 ? 'imp-sm' : g.imp <= 0.25 ? 'imp-md' : 'imp-lg';
-  var laborCls = g.labor < 20 ? 'labor-ok' : g.labor < 22 ? 'labor-warn' : 'labor-bad';
-  var avnColor = g.actvneed > 200 ? 'color:var(--red);font-weight:600;' : g.actvneed > 0 ? 'color:var(--amber);' : 'color:var(--green);';
-  var tr = document.createElement('tr');
-  tr.innerHTML =
-    '<td><span style="font-family:DM Mono,monospace;font-weight:600;font-size:13px;">' + g.loc + '</span></td>' +
-    '<td class="r">' + g.apr.toFixed(2) + '</td>' +
-    '<td class="r"><span class="' + laborCls + '">' + g.labor.toFixed(1) + '%</span></td>' +
-    '<td class="r">$' + g.rate.toFixed(2) + '</td>' +
-    '<td class="r">' + g.ot.toFixed(0) + '</td>' +
-    '<td class="r" style="' + avnColor + '">' + (g.actvneed > 0 ? '+' : '') + g.actvneed.toFixed(0) + '</td>' +
-    '<td class="c"><span class="tier ' + tc.cls + '">' + tc.label + '</span></td>' +
-    '<td class="may-goal-cell">' + g.goal.toFixed(2) + '</td>' +
-    '<td class="c"><span class="imp-chip ' + impCls + '">' + (g.imp >= 0 ? '+' : '') + g.imp.toFixed(2) + '</span></td>' +
-    '<td style="font-size:11px;color:var(--muted);">' + g.focus + '</td>';
-  tbody.appendChild(tr);
-});
-</script>
 </body>
 </html>
